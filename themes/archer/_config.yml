@@ -1,0 +1,140 @@
+# ========== Profile ========== #
+# avatar
+avatar: /images/avatar.png
+# author name
+author: SketchK
+# signature
+signature: Do One Thing And Do It Well
+# SNS (you can custom the order)
+social:
+  email: zhangsiqi1988@gmail.com
+  github: https://github.com/SketchK
+  twitter: https://twitter.com/SketchK47
+  weibo: http://weibo.com/u/1673935657
+  rss: /atom.xml
+  # wechat and qq should be a path of qr-code image
+  # wechat: /assets/example_qr.png
+  qq: 
+  telegram: 
+  zhihu: 
+  douban: 
+  facebook: 
+  instagram: 
+  stack-overflow: 
+  segmentFault: 
+  juejin: 
+  v2ex: 
+  bilibili: 
+  linkedin: 
+  steam: 
+  others: 
+# friends
+friends:
+  靛青君: https://blog.dianqk.org/
+  Cee妹: http://blog.cee.moe/
+  Sai姐: http://saitjr.com
+  瓜瓜: https://www.desgard.com/
+  羊神: https://www.sunnyyoung.net/
+  Ming: http://zesming.com/
+  御姐: http://forelax.space/
+about:
+  enable: true
+  image: '/intro/about-bg.jpg'
+bookshelf:
+  enable: true
+  image: '/intro/about-bg.jpg'
+project:
+  enable: true
+  image: '/intro/about-bg.jpg'
+
+# ========== Site ========== #
+# title of the site (good for SEO)
+SEO_title: SketchK's Studio
+# keywords for site (good for SEO)
+SEO_keywords:
+  - SketchK
+  - iOS
+# main title shown in header image
+main_title: SketchK's Studio.
+# subtitle
+subtitle: Keep It Simple And Stupid
+# site haeder image
+site_header_image: '/intro/index-bg.jpg'
+# post haeder image
+post_header_image: '/intro/post-bg.jpg'
+# 404 image
+_404_image: '/intro/404-bg.jpg'
+
+# ========== Search ========== #
+algolia_search:
+  enable: true
+  hits:
+    per_page: 10
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "We did not find any results for the search: ${query}"
+    hits_stats: "${hits} results found in ${time} ms"
+
+# ========== Comment ========== #
+# Fill in the field to enable the corresponding comment plugin
+# If you want to add other comment plugin, edit in "custom.ejs"
+comment:
+  # Livere  site: https://livere.com/
+  # livere_uid: MTAyMC8yNzgxNS80Mzkx
+  # Disqus  site: https://disqus.com/
+  disqus_shortname: sketchk-xyz
+  # Gitment  site: https://github.com/imsun/gitment
+  # gitment_owner: SketchK
+  # gitment_repo: BLOG
+  # gitment_client_id: 1acbc0ee74b0bcecc74e
+  # gitment_client_secret: 84ea0c1fec26aad422cfbb1a434fe079dab4b880
+  # Youyan  site: http://www.uyan.cc/
+  youyan_uid: 
+  # Valine  site: https://valine.js.org/
+  valine_appId: 
+  valine_appKey: 
+  valine_placeHolder: 
+  # gitalk site: https://github.com/gitalk/gitalk#options  
+  gitalk_client_id: 
+  gitalk_client_secret: 
+  gitalk_admin: 
+  gitalk_owner: 
+  gitalk_repo: 
+  # utteranc site: https://utteranc.es/
+  utteranc_repo:  
+  utteranc_label: 
+  utteranc_theme: 
+  utteranc_issue_term: 
+
+# ========== Analytics ========== #
+# enable Busuanzi analytics
+busuanzi: true
+# fill in pv or uv
+busuanzi_pv_or_uv: 'pv'
+# custom analytic slogan, '${count}' is the analytic number, DO NOT modify it.
+busuanzi_slug: 'PV: ${count} :)'
+# Baidu analytics
+baidu_analytics: b07ee1cf0a99dfb6056d7888e386b323
+# Google analytics
+google_analytics: UA-94029608-1
+# CNZZ analytics
+CNZZ_analytics: 
+
+# ========== Others ========== #
+# favicon
+favicon: /images/favicon.png
+# truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
+truncate_length: 
+# enable toc
+toc: true
+# word count & reading time
+reading_info: true
+# intro height (the default is 50 percents of the screen, you can input other number)
+index_intro_height: 50
+post_intro_height: 50
+about_intro_height: 50
+# copyright
+copyright:
+  enable: true
+  # https://creativecommons.org/
+  license: '本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可'
