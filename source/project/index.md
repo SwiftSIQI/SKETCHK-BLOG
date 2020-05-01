@@ -12,9 +12,9 @@ comments: false
 
 ### 2020 年
 
-* [扫描 App 是否使用 Swift 相关代码的脚本工具](https://github.com/ZRTransmitter/SwiftAppAnalyzer)
+* [扫描 App 是否使用 Swift 代码的脚本工具 - Swift App Analyzer](https://github.com/ZRTransmitter/SwiftAppAnalyzer)
 
-* [可交互的下拉刷新控件](https://github.com/SketchK/a-playable-refresh-demo)
+* [可交互游戏形式的下拉刷新控件Demo - A Playable Refresh Demo](https://github.com/SketchK/a-playable-refresh-demo)
 
 ### 2019 年
 
