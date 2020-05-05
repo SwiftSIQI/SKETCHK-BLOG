@@ -13,13 +13,13 @@ social:
   weibo: http://weibo.com/u/1673935657
   rss: /atom.xml
   # wechat and qq should be a path of qr-code image
-  # wechat: /assets/example_qr.png
+  wechat:
   qq: 
-  telegram: 
+  telegram:
   zhihu: 
   douban: 
   facebook: 
-  instagram: 
+  instagram:
   stack-overflow: 
   segmentFault: 
   juejin: 
@@ -27,7 +27,7 @@ social:
   bilibili: 
   linkedin: 
   steam: 
-  others: 
+  others:
 # friends
 friends:
   靛青君: https://blog.dianqk.org/
@@ -84,10 +84,10 @@ comment:
   # Disqus  site: https://disqus.com/
   disqus_shortname: sketchk-xyz
   # Gitment  site: https://github.com/imsun/gitment
-  # gitment_owner: SketchK
-  # gitment_repo: BLOG
-  # gitment_client_id: 1acbc0ee74b0bcecc74e
-  # gitment_client_secret: 84ea0c1fec26aad422cfbb1a434fe079dab4b880
+  # gitment_owner:
+  # gitment_repo:
+  # gitment_client_id:
+  # gitment_client_secret:
   # Youyan  site: http://www.uyan.cc/
   youyan_uid: 
   # Valine  site: https://valine.js.org/
@@ -122,7 +122,7 @@ CNZZ_analytics:
 
 # ========== Others ========== #
 # favicon
-favicon: /images/favicon.png
+favicon: /assets/favicon.ico
 # truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
 truncate_length: 
 # enable toc
