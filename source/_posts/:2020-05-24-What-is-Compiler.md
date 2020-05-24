@@ -133,10 +133,3 @@ categories:
 有些翻译官可以做到同声传译（直译），有些翻译官却只能把我们的意图记下来再全部翻译（编译）给计算机。
 
 而往往一个翻译官能力有限，也只能把你的语言，翻译成另外一种低级点的语言，再由另外懂这个语言的翻译官来翻译更接近计算机能读得懂的语言。
-
-## 索引
-
-* [程序的编译与解释有什么区别？](https://www.zhihu.com/question/21486706)
-* [噢！我的編譯器 – Introduction I](https://jkrvivian.com/blog/compiler/introduction-to-compiler-i/)
-* [你知道「编译」与「解释」的区别吗？](https://huang-jerryc.com/2016/11/20/do-you-konw-the-different-between-compiler-and-interpreter/)
-* [Translator 的 wiki 解释](https://www.wikiwand.com/en/Translator_(computing))
