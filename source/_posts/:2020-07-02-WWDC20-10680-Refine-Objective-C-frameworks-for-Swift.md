@@ -79,7 +79,7 @@ categories:
 * 将原有的 `- ()previousMissionsFlownByAstronaut:(SKAStronaut *)astronaut` 的方法名优化成了 `previousMissionFlown(by astronaut:)`
 * 将原有的 `-(BOOL)saveToURL:(NSURL *)url error:(NSError **)error` 的错误处理 API 改成了 Swift 风格的 API
 
-![IMAGE](05.png)
+![IMAGE](05.jpg)
 
 但这样的 API 接口还存在多问题，让我们列举一下：
 
