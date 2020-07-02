@@ -76,7 +76,7 @@ categories:
 
 * 将 NSString，NSDate 类型转换成了 String，Date；
 * 将 Objective-C 里的初始化方法转换成了 Swift 里的构造器方法；
-* 将原有的 `- ()previousMissionsFlownByAstronaut:(SKAStronaut *)astronaut` 的方法名优化成了 `previousMissionFlown(by astronaut:)`
+* 将原有的 `- (NSSet *)previousMissionsFlownByAstronaut:(SKAStronaut *)astronaut` 的方法名优化成了 `previousMissionFlown(by astronaut:)`
 * 将原有的 `-(BOOL)saveToURL:(NSURL *)url error:(NSError **)error` 的错误处理 API 改成了 Swift 风格的 API
 
 ![IMAGE](05.jpg)
@@ -98,7 +98,7 @@ categories:
 * SKCapsule 和 SKRocket 类型的常量
   * 用于枚举的字符串常量在 Swift 里更适合使用 enum 类型来描述
   * `SKCapsuleApolloCSM` 的 API 消失了
-  * `SKRocketStageCoun(_ rocket: String!) -> Unit` 的 API 还有不少潜在的风险
+  * `SKRocketStageCount(_ rocket: String!) -> Unit` 的 API 还有不少潜在的风险
 
 如果你还看不出上面存在的所有问题，也无法提供所有问题的解决方案，那么这篇文章将十分适合你阅读。
 
