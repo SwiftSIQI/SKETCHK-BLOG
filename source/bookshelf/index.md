@@ -36,7 +36,6 @@ comments: false
 * 📖[番茄工作法](https://book.douban.com/subject/5916234/)【重读】
 * 📖[单核工作法](https://book.douban.com/subject/27177909/)【重读】
 * 📖[自控力](https://book.douban.com/subject/10786473/)
-* 📖[金字塔原理](https://book.douban.com/subject/25775696/)【重读】
 * 📖[通往财富自由之路](https://book.douban.com/subject/27170672/)
 * 📖[认知红利](https://book.douban.com/subject/34793488/)
 * 📖[认知天性](https://book.douban.com/subject/30353486/)
@@ -61,16 +60,21 @@ comments: false
 
 #### 软件开发
 
-* 📖[The Swift Programming Language (Swift 5.2)](https://docs.swift.org/swift-book/)【重读】
+* 📖[The Swift Programming Language (Swift 5.3)](https://docs.swift.org/swift-book/)【重读】
 * 📖[iOS Apprentice](https://store.raywenderlich.com/products/ios-apprentice)
 * 📖[Concurrency by Tutorials](https://store.raywenderlich.com/products/concurrency-by-tutorials)
 * 📖[Design Patterns by Tutorials](https://store.raywenderlich.com/products/design-patterns-by-tutorials)
 * 📖[Swift Apprentice](https://store.raywenderlich.com/products/swift-apprentice)
-* 📖[SwiftUI 与 Combine 编程](https://objccn.io/products/swift-ui)
 * 📖[iOS Animations by Tutorials](https://store.raywenderlich.com/products/ios-animations-by-tutorials)
 * 📖[Advanced Apple Debugging & Reverse Engineering](https://store.raywenderlich.com/products/advanced-apple-debugging-and-reverse-engineering)
 
 ### 2020 年学到的知识
+
+* 📖[金字塔原理](https://book.douban.com/subject/25775696/)【重读】
+> 学后感：结合着公司里的课程, 重新学习了这个所谓的美团四大名著, 总体来说, 这种逻辑思维, 或者呈现事务的方式只是众多解决方案中的一种, 不用什么事儿都套金字塔原理, 重要的还是自己的思维方式要有逻辑
+
+* 📖[SwiftUI 与 Combine 编程 - 第一版](https://objccn.io/products/swift-ui)
+> 学后感：感觉书的内容还是能够很快帮助初学者建立框架的认知和概念, 但是对很多细节是没有展开讨论的, 所以不能说面面俱到, 但还算是为数不多的中文经典教材, 另外个人觉得对 Combine 部分的描述, 总是缺点什么, 理解起来总是很晦涩, 可能之前的代码写的还是太少了, 最近听说出了第二版,等有机会读完再更新评论
 
 * 📺✅[用 1Password 做好密码管理](https://sspai.com/series/15/list) - 03 月
 

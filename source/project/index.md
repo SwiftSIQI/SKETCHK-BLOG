@@ -12,6 +12,8 @@ comments: false
 
 ### 2020 年
 
+* [用于规范头文件引入方式的自动化工具 - import-sanitizer](https://github.com/SketchK/import-sanitizer)
+
 * [扫描 App 是否使用 Swift 代码的脚本工具 - Swift App Analyzer](https://github.com/ZRTransmitter/SwiftAppAnalyzer)
 
 * [可交互游戏形式的下拉刷新控件Demo - A Playable Refresh Demo](https://github.com/SketchK/a-playable-refresh-demo)
