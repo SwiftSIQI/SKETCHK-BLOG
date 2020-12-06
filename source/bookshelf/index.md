@@ -18,32 +18,6 @@ comments: false
 
 ### 未来计划学习的内容
 
-#### 文化与艺术
-
-* 📖[乔伊重金属节奏吉他教材1,2](https://book.douban.com/subject/1159928/)
-* 📖[乔伊重金属主音吉他教材1,2](https://book.douban.com/subject/1159502/)
-* 📖[365日！电吉他手的养成计划](https://book.douban.com/subject/7056881/)
-* 📖[1个月电吉他新手的养成计划](https://book.douban.com/subject/7056881/)
-* 📺[吉他指板攻略 - Neo牛晖](https://www.iyamusic.com/course/278)
-* 📺[吉他指板攻略(进阶篇)-Neo牛晖](https://www.iyamusic.com/course/469)
-* 📺[玩转节奏训练营 - Neo牛晖](https://www.iyamusic.com/course/739)
-* 📺[玩转和声 - Neo牛晖](https://www.iyamusic.com/course/512)
-* 📺[Apple GarageBand 教程系列 by Ted-E](https://www.bilibili.com/video/av23248675?p=1)
-
-#### 个人能效类
-
-* 📖[高效能人士的七个习惯](https://book.douban.com/subject/26284789/)【重读】
-* 📖[番茄工作法](https://book.douban.com/subject/5916234/)【重读】
-* 📖[单核工作法](https://book.douban.com/subject/27177909/)【重读】
-* 📖[自控力](https://book.douban.com/subject/10786473/)
-* 📖[通往财富自由之路](https://book.douban.com/subject/27170672/)
-* 📖[认知红利](https://book.douban.com/subject/34793488/)
-* 📖[认知天性](https://book.douban.com/subject/30353486/)
-* 📖[Ultralearning](https://book.douban.com/subject/32144202/)
-* 📖[英文文法有道理!重新認識英文文法觀念](https://book.douban.com/subject/23846372/)
-* 📖[英语魔法师之语法俱乐部](https://book.douban.com/subject/1014914/)
-* 📖[剑指 Offer](https://book.douban.com/subject/6966465/)
-
 #### 计算机基础
 
 * 📖[Data Structures and Algorithms in Swift](https://store.raywenderlich.com/products/data-structures-and-algorithms-in-swift)
@@ -67,6 +41,37 @@ comments: false
 * 📖[Swift Apprentice](https://store.raywenderlich.com/products/swift-apprentice)
 * 📖[iOS Animations by Tutorials](https://store.raywenderlich.com/products/ios-animations-by-tutorials)
 * 📖[Advanced Apple Debugging & Reverse Engineering](https://store.raywenderlich.com/products/advanced-apple-debugging-and-reverse-engineering)
+
+#### 个人能效类
+
+* 📖[高效能人士的七个习惯](https://book.douban.com/subject/26284789/)【重读】
+* 📖[番茄工作法](https://book.douban.com/subject/5916234/)【重读】
+* 📖[单核工作法](https://book.douban.com/subject/27177909/)【重读】
+* 📖[自控力](https://book.douban.com/subject/10786473/)
+* 📖[通往财富自由之路](https://book.douban.com/subject/27170672/)
+* 📖[认知红利](https://book.douban.com/subject/34793488/)
+* 📖[认知天性](https://book.douban.com/subject/30353486/)
+* 📖[Ultralearning](https://book.douban.com/subject/32144202/)
+* 📖[英文文法有道理!重新認識英文文法觀念](https://book.douban.com/subject/23846372/)
+* 📖[英语魔法师之语法俱乐部](https://book.douban.com/subject/1014914/)
+* 📖[剑指 Offer](https://book.douban.com/subject/6966465/)
+
+#### 文化与艺术
+
+* 📖[乔伊重金属节奏吉他教材1,2](https://book.douban.com/subject/1159928/)
+* 📖[乔伊重金属主音吉他教材1,2](https://book.douban.com/subject/1159502/)
+* 📖[365日！电吉他手的养成计划](https://book.douban.com/subject/7056881/)
+* 📖[1个月电吉他新手的养成计划](https://book.douban.com/subject/7056881/)
+* 📺[吉他指板攻略 - Neo牛晖](https://www.iyamusic.com/course/278)
+* 📺[吉他指板攻略(进阶篇)-Neo牛晖](https://www.iyamusic.com/course/469)
+* 📺[玩转节奏训练营 - Neo牛晖](https://www.iyamusic.com/course/739)
+* 📺[玩转和声 - Neo牛晖](https://www.iyamusic.com/course/512)
+* 📺[Blues 吉他入门 - Neo牛晖](https://www.iyamusic.com/course/558)
+* 📺[吉他初级课程 CAGED 系统 - 尹攀](http://v.xue.taobao.com/learn.htm?spm=a2174.7765244.0.0.FE9KrR&courseId=115301)
+* 📺[视唱练耳 初级课程 - 尹攀](http://v.xue.taobao.com/learn.htm?spm=a2174.7365753.0.0.Ahe16R&courseId=116533)
+* 📺[零基础入门吉他夜里教程 - 王君](http://v.xue.taobao.com/learn.htm?spm=a2174.7765244.0.0.FE9KrR&courseId=88137)
+* 📺[Logic Pro X 零基础入门课 by 简单声音](https://apprssuyjsv8982.h5.xiaoeknow.com/v1/course/column/p_5e8414e321456_GyqNHrsf?type=3)
+* 📺[Apple GarageBand 教程系列 by Ted-E](https://www.bilibili.com/video/av23248675?p=1)
 
 ### 2020 年学到的知识
 
