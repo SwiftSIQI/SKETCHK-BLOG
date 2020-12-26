@@ -1,5 +1,5 @@
 ---
-title: Write a Swift CLI
+title: 使用 Swift 编写 CLI 工具的入门教程
 comments: true
 date: 2020-12-26 15:28:00
 updated:
@@ -11,7 +11,9 @@ categories:
 
 ---
 
-这是摘要
+通过这篇文章，你将了解到为何要使用 Swift 编写脚本工具, 同时我会通过 Step-By-Step 的方式，指导你从头搭建一个 Swift CLI 项目，并写下了一个简单的命令，除此之外, 还会告诉你如何在 Xcode 里调试 Swift CLI 类型的工程项目，在文章的最后，我向你介绍了一些开源社区的优秀资源来加速你的开发。
+
+总之，我们十分期待你使用 Swift 编写属于自己的命令行工具！
 
 <!-- more -->
 
