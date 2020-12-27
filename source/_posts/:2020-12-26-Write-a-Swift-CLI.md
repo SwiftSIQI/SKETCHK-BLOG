@@ -11,17 +11,16 @@ categories:
 
 ---
 
-通过这篇文章，你将了解到为何要使用 Swift 编写脚本工具, 同时我会通过 Step-By-Step 的方式，指导你从头搭建一个 Swift CLI 项目，并写下了一个简单的命令，除此之外, 还会告诉你如何在 Xcode 里调试 Swift CLI 类型的工程项目，在文章的最后，我向你介绍了一些开源社区的优秀资源来加速你的开发。
-
-总之，我们十分期待你使用 Swift 编写属于自己的命令行工具！
+为何要使用 Swift 编写脚本工具？
+如何从头搭建一个 Swift CLI 项目？ 
+如果你想知道答案，就来读读这篇文章吧！
 
 <!-- more -->
-
 ## 概述
 
 最近在工作中过程中基于 Swift 开发了两款命令行工具：
 
-* Nezuko(未开源) ，一款面向美团壳工程的，类 `create-react-app` 的脚手架工具。
+* [Nezuko]() ，一款面向美团壳工程的，类 `create-react-app` 的脚手架工具。
 * [ImportSanitizer](https://github.com/SketchK/import-sanitizer)，一款能够修复不规范头文件引用方式的自动化工具。
 
 在整个开发过程中，我们体会到了 Swift 带来的一些变化，当然这里既有好的，也有坏的，不过总的来说，使用 Swift 进行脚本开发还是一件让人愉悦的事情，所以我们迫不及待的邀请你，也就是这篇文章的读者，和我们一起加入 Swift 开发的大军中！
@@ -56,7 +55,7 @@ categories:
 
 在年初的时候，我曾经一度痴迷 SpriteKit，并尝试开发一款属于自己的横版过关游戏，这其中涉及到大量的图片处理，例如使用 Animation 的方式将多张静态图片整合成动态效果，大体的效果就像下面的 gif 一样
 
-![01](1.gif)
+![1](1.gif)
 
 这背后的代码大概如下所示，通过读取相应顺序和数量的图片构建 gif 动画
 
@@ -255,7 +254,6 @@ $ swift run
 > 我们其实可以通过直接调用 `swift run` 命令来达到运行程序的目的，因为如果需要的话，它会自动编译我们的项目，但学习一下底层命令的工作原理总是有益的。
 
 ### 增加依赖
-
 除非你正在构建一些十分“特殊”的东西，否则你会发现自己需要为你的命令行工具添加一些依赖关系，毕竟有好用的轮子为啥不用呢？
 
 任何 Swift Package 都可以被添加为依赖项，只需在 `Package.swift` 中指定它。
@@ -338,7 +336,7 @@ public extension CommandLineTool {
 
 如上所述，我们把对 `Folder.current.createFile()` 的调用包装在自己的 `do、try、catch` 中，以便为用户提供统一的，自定义的错误 API。
 
-#### Argument Parser
+### Argument Parser
 
 除了刚才提到的参数解析方式，Apple 官方还提过了一个更优化的解决方案 - [Swift Argument Parser](https://github.com/apple/swift-argument-parser)
 
@@ -406,7 +404,7 @@ OPTIONS:
 
 即使如此，我相信通过上面的介绍，你也大致了解到了 ArgumentParser 的使用方式了，记得将其用在你自己的项目中吧！
 
-### 编写单测
+## 编写单测
 
 我们几乎已经准备好发布这个命令行工具了，但在这样做之前，我们还是需要通过编写一些测试来确保它真正的按照预期工作。
 
@@ -465,7 +463,7 @@ class CommandLineToolTests: XCTestCase {
 
 要运行测试，只需在命令行上运行 `swift test` 即可。
 
-### 安装工具
+## 安装工具
 
 现在我们已经构建并测试了我们的命令行工具！下面开始，我们会尝试安装它，并使它能够在任何地方运行。
 
@@ -479,23 +477,19 @@ $ cp -f CommandLineTool /usr/local/bin/commandlinetool
 
 ## 调试技巧
 
-在实际的开发过程中，不免会遇到一些 bug，这部分内容我们将讨论一些针对 CLI 的 Xcode 调试技巧。
-
-### 通过 Xcode 添加入参
-
-首先，命令行大多是需要输入参数的，所以我们在 Xcode 里如何为命令行添加入参呢？
+命令行大多是需要输入参数的，所以在实际的开发过程中，我们如何在 Xcode 里如何为命令行添加入参呢？
 
 首先，在 Xcode 的 Toolbar 中，我们点击 choose scheme 面板中的 `Edit Scheme...` 按钮
 
-![02](2.jpg)
+![2](2.jpg)
 
 在弹出的界面中点击左侧 Run 面板，并继续点击右侧的 Argument 的 Tab 按钮，我们会看到如下的界面，此时我们可以在 Arguments Passed On Launch 中添加命令行所需的参数，例如这里我们添加了一个 `Hello.swift` 的参数。
 
-![03](3.jpg)
+![3](3.jpg)
 
 此时，我们再次通过 `CMD+R` 的方式运行程序，就会在构建产物的目录中，看到生成的 `Hello.swift` 文件
 
-![02](4.jpg)
+![4](4.jpg)
 
 ## 让开源社区加速你的开发
 
@@ -511,10 +505,9 @@ $ cp -f CommandLineTool /usr/local/bin/commandlinetool
 * [Swift Atomics](https://github.com/apple/swift-atomics)：为各种 Swift 类型提供原子操作，包括整数和指针值。
 * [Swift Backtrace](https://github.com/swift-server/swift-backtrace)：这个 Package 为项目提供了自动打印程序崩溃信息的能力。
 
-总之，这个社区在不断的发展中，很多新的官方库也在如火如荼的建设中，如果你发现这里的内容还不够用，可以关注一下 [Vapor](https://github.com/vapor)，[PerfectlySoft Inc](https://github.com/PerfectlySoft) 和 [SwiftWasm](https://github.com/swiftwasm) [Crossroad Labs](https://github.com/crossroadlabs)的 Group，也能找到很多不错的 package 资源。
+总之，这个社区在不断的发展中，很多新的官方库也在如火如荼的建设中，如果你发现这里的内容还不够用，可以关注一下 [Vapor](https://github.com/vapor)，[PerfectlySoft Inc](https://github.com/PerfectlySoft)， [SwiftWasm](https://github.com/swiftwasm) 和 [Crossroad Labs](https://github.com/crossroadlabs) 的 Group，也能找到很多不错的 package 资源。
 
 当然，也有很多个人开发者提供了不错的 Package 资源，例如：
-
 * [Guitar](https://github.com/artsabintsev/guitar)：这绝对会是你在开发中需要到的东西，一个正则匹配加强库！
 * [Rainbow](https://github.com/onevcat/Rainbow)：可以对命令行里的输出内容增加文本颜色，背景样式等。
 * [SwiftShell](https://github.com/kareman/SwiftShell)：可以在 Swift 里调用 Shell 命令的 Package
@@ -526,6 +519,4 @@ $ cp -f CommandLineTool /usr/local/bin/commandlinetool
 
 ## 总结
 
-通过这篇文章，你了解到了如何从头搭建一个 Swift CLI 项目，并写下了一个简单的命令，同时你也知道了如何在 Xcode 里调试工程项目，在文章的最后，我们向你介绍了一些开源社区的优秀资源来加速你的开发。
-
-总之，我们十分期待你使用 Swift 编写属于自己的命令行工具！
+通过这篇文章，你已经掌握了如何从零编写 Swift CLI 项目的所有基础知识，也了解了社区里的一些优秀资源，十分期待你开始使用 Swift 编写属于自己的命令行工具！
