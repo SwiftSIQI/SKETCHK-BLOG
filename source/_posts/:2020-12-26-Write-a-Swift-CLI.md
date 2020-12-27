@@ -477,7 +477,7 @@ $ cp -f CommandLineTool /usr/local/bin/commandlinetool
 
 ## 调试技巧
 
-命令行大多是需要输入参数的，所以在实际的开发过程中，我们如何在 Xcode 里如何为命令行添加入参呢？
+命令行大多是需要输入参数的，所以在实际的开发过程中，我们如何在 Xcode 里添加入参呢？
 
 首先，在 Xcode 的 Toolbar 中，我们点击 choose scheme 面板中的 `Edit Scheme...` 按钮
 
