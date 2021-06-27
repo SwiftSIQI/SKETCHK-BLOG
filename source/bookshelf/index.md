@@ -38,7 +38,6 @@ comments: false
 * 📖[iOS Apprentice](https://store.raywenderlich.com/products/ios-apprentice)
 * 📖[Concurrency by Tutorials](https://store.raywenderlich.com/products/concurrency-by-tutorials)
 * 📖[Design Patterns by Tutorials](https://store.raywenderlich.com/products/design-patterns-by-tutorials)
-* 📖[Swift Apprentice](https://store.raywenderlich.com/products/swift-apprentice)
 * 📖[iOS Animations by Tutorials](https://store.raywenderlich.com/products/ios-animations-by-tutorials)
 * 📖[Advanced Apple Debugging & Reverse Engineering](https://store.raywenderlich.com/products/advanced-apple-debugging-and-reverse-engineering)
 
@@ -49,16 +48,13 @@ comments: false
 * 📖[单核工作法](https://book.douban.com/subject/27177909/)【重读】
 * 📖[自控力](https://book.douban.com/subject/10786473/)
 * 📖[通往财富自由之路](https://book.douban.com/subject/27170672/)
-* 📖[认知红利](https://book.douban.com/subject/34793488/)
 * 📖[认知天性](https://book.douban.com/subject/30353486/)
 * 📖[Ultralearning](https://book.douban.com/subject/32144202/)
-* 📖[英文文法有道理!重新認識英文文法觀念](https://book.douban.com/subject/23846372/)
 * 📖[英语魔法师之语法俱乐部](https://book.douban.com/subject/1014914/)
 * 📖[剑指 Offer](https://book.douban.com/subject/6966465/)
 
 #### 文化与艺术
 
-* 📖[乔伊重金属节奏吉他教材1,2](https://book.douban.com/subject/1159928/)
 * 📖[乔伊重金属主音吉他教材1,2](https://book.douban.com/subject/1159502/)
 * 📖[365日！电吉他手的养成计划](https://book.douban.com/subject/7056881/)
 * 📖[1个月电吉他新手的养成计划](https://book.douban.com/subject/7056881/)
@@ -73,13 +69,35 @@ comments: false
 * 📺[Logic Pro X 零基础入门课 by 简单声音](https://apprssuyjsv8982.h5.xiaoeknow.com/v1/course/column/p_5e8414e321456_GyqNHrsf?type=3)
 * 📺[Apple GarageBand 教程系列 by Ted-E](https://www.bilibili.com/video/av23248675?p=1)
 
+### 2021 年学到的知识
+
+* 📖[英文文法有道理!重新認識英文文法觀念](https://book.douban.com/subject/23846372/)
+
+> 学后感：英语还是要学习的, 等读完写感受!
+
+* 📖[Swift Apprentice](https://store.raywenderlich.com/products/swift-apprentice)
+
+> 学后感：The Swift Programming Language 这书怎么说呢, 看起来有点不是那么'友好', 所以转读这本书 RW 的入门书, 虽然很新手友好, 废话比较多, 但对于重新建立一些概念还是挺好的, 很多内容读完以后, 一下就在脑子里扎了根, 很不错! 可惜目前还是 5.3 版本. 不过读一读还是挺好的.
+
+* 📖✅[冥想正念指南 Headspace Guide to Meditation](https://www.bilibili.com/video/BV1Ht4y1r7jA?p=1)
+
+> 学后感：晋升完以后, 思绪一直很躁动, 需要好好调整自己, 冥想要纳入到日常的训练中, 目前听完以后, 感觉还是不错的, 做入门是没问题的!
+
+* 📖✅[认知红利](https://book.douban.com/subject/34793488/)
+
+> 学后感：这书的大部分内容对于重新建立日常的认知是十分有帮助的, 尤其"从内对外"和"从外对内"的身心统一, 真的是醍醐灌顶. 有机会要再多读几遍!
+
 ### 2020 年学到的知识
 
-* 📖[金字塔原理](https://book.douban.com/subject/25775696/)【重读】- 11 月
+* 📖✅[乔伊重金属节奏吉他教材1,2](https://book.douban.com/subject/1159928/)
+
+> 学后感：虽然教材比较老了, 但真的新手友好, 加上[王君老师的配套视频](https://www.bilibili.com/video/BV1bx411H768?from=search&seid=2763396646127445220), 个人觉得还是不错的. 至少能让人先弹起来啊!
+
+* 📖✅[金字塔原理](https://book.douban.com/subject/25775696/)【重读】- 11 月
 
 > 学后感：结合着公司里的课程, 重新学习了这个所谓的美团四大名著, 总体来说, 这种逻辑思维, 或者呈现事务的方式只是众多解决方案中的一种, 不用什么事儿都套金字塔原理, 重要的还是自己的思维方式要有逻辑
 
-* 📖[SwiftUI 与 Combine 编程 - 第一版](https://objccn.io/products/swift-ui) - 05 月
+* 📖✅[SwiftUI 与 Combine 编程 - 第一版](https://objccn.io/products/swift-ui) - 05 月
 
 > 学后感：感觉书的内容还是能够很快帮助初学者建立框架的认知和概念, 但是对很多细节是没有展开讨论的, 所以不能说面面俱到, 但还算是为数不多的中文经典教材, 另外个人觉得对 Combine 部分的描述, 总是缺点什么, 理解起来总是很晦涩, 可能之前的代码写的还是太少了, 最近听说出了第二版,等有机会读完再更新评论
 
