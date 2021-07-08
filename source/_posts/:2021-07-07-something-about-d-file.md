@@ -40,7 +40,7 @@ DTrace 脚本，是用 D 语言编写的脚本，既可以用 DTrace 脚本声�
 
 声明 probe 的例子:
 
-```dtrace
+```sh
 // 声明 probe               
 provider syncengine_sync {
     probe strategy_go_to_state(int);
@@ -49,7 +49,7 @@ provider syncengine_sync {
 
 或者调用 probe 的例子:
 
-```dtrace
+```sh
 // 调用 probe  
 syncengine_sync*:::strategy_go_to_state
 {
@@ -100,7 +100,7 @@ int main(int argc, const char * argv[]) {
 
 此时我们在工程里创建一个 provider.d 文件声明一个自定义的 probe
 
-```dtrace
+```sh
 provider zsq {
     probe go();
 };
@@ -108,7 +108,7 @@ provider zsq {
 
 此时的文件目录是如下
 
-```shell
+```sh
 ▶ tree
 .
 ├── main.m
@@ -214,7 +214,7 @@ int main(int argc, const char * argv[]) {
 
 此时我们在另一个 terminal  里去启用 dtrace 来追踪预埋的探针
 
-```shell
+```sh
 // -s 参数的 zsq.d 指的是定义的 probe 文件， 
 // -P 参数的 zsq30629 指的是 probe name + PID, probe name 在 .d 里查看， PID 命令可以通过 ps -A 查看
 sudo dtrace -s zsq.d -P zsq30629
