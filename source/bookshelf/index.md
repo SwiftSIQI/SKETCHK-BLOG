@@ -20,23 +20,20 @@ comments: false
 
 #### 计算机基础
 
-* 📖[Data Structures and Algorithms in Swift](https://store.raywenderlich.com/products/data-structures-and-algorithms-in-swift)
-* 📺[CS 50](https://cs50.harvard.edu/college/2020/spring/)
-* 📖[计算机是怎么跑起来的](https://book.douban.com/subject/26397183/)【重读】
 * 📖[编码](https://book.douban.com/subject/20260928/)
+* 📖[计算机是怎么跑起来的](https://book.douban.com/subject/26397183/)【重读】
 * 📖[程序是怎么跑起来的](https://book.douban.com/subject/26365491/)【重读】
+* 📖[网络是怎么连接的](https://book.douban.com/subject/26941639/)
 * 📖[30 天自制操作系统](https://book.douban.com/subject/11530329/)
 * 📖[自制编程语言](https://book.douban.com/subject/25735333/)
-* 📖[网络是怎么连接的](https://book.douban.com/subject/26941639/)
 * 📖[程序员的数学 1](https://book.douban.com/subject/19949020/)
 * 📖[程序员的数学 2-概览统计](https://book.douban.com/subject/26593822/)
 * 📖[程序员的数学 3-线性代数](https://book.douban.com/subject/26740548/)
 
 #### 软件开发
 
-* 📖[The Swift Programming Language (Swift 5.3)](https://docs.swift.org/swift-book/)【重读】
+* 📖[The Swift Programming Language (Swift 5.5)](https://docs.swift.org/swift-book/)【重读】
 * 📖[iOS Apprentice](https://store.raywenderlich.com/products/ios-apprentice)
-* 📖[Concurrency by Tutorials](https://store.raywenderlich.com/products/concurrency-by-tutorials)
 * 📖[Design Patterns by Tutorials](https://store.raywenderlich.com/products/design-patterns-by-tutorials)
 * 📖[iOS Animations by Tutorials](https://store.raywenderlich.com/products/ios-animations-by-tutorials)
 * 📖[Advanced Apple Debugging & Reverse Engineering](https://store.raywenderlich.com/products/advanced-apple-debugging-and-reverse-engineering)
@@ -75,7 +72,27 @@ comments: false
 
 > 学后感：英语还是要学习的, 等读完写感受!
 
-* 📖[Swift Apprentice](https://store.raywenderlich.com/products/swift-apprentice)
+* 📖[Data Structures and Algorithms in Swift](https://store.raywenderlich.com/products/data-structures-and-algorithms-in-swift)
+
+> 学后感：希望年前能看完!
+
+* 📺[CS 50](https://cs50.harvard.edu/college/2020/spring/)
+
+> 学后感：重新看了这一系列的视频, 又有了一些新的感触, 另外想起当时有看过某个人对这个课的评论是这样, 计算机的入门课应该有且只有这一种教法, 我现在深以为然!
+
+* 📺[3 小时搞定 C 语言](https://www.bilibili.com/cheese/play/ep2088)
+
+> 学后感：初衷是为了快速回顾一下 C 语言的知识点, 所以 B 站买了这个视频课, 课程内容属于围绕基本知识点展开的, 基本没废话, 感觉还是可以的, 毕竟 3 小时嘛, ROI 还算毕竟高.
+
+* 📖✅[Dive Into Design Patterns](https://refactoring.guru/design-patterns/books)
+
+> 学后感：这本书读的中文版, 比较后悔, 感觉译者的水平不是特别高, 读起来很费劲儿, 很多时候还得回去看看英文, 另外书里面对很多模式都有讲解, 部分模式接触的比较少, 感知不是很强烈, 不过每个模式都有配套的代码, 感觉这个代码才是此书的精髓.
+
+* 📖✅[Concurrency by Tutorials](https://store.raywenderlich.com/products/concurrency-by-tutorials)
+
+> 学后感：这本书不是特别长, 大概也就 200 页不到, 覆盖了 GCD 的大部分使用场景, 对于了解原理和 API 都是很不错的入门书籍, 看完以后觉得至少在引用层面应更是会得心应手了. 唯一缺点是这书没有课后练习, 少了点实战的机会.
+
+* 📖✅[Swift Apprentice](https://store.raywenderlich.com/products/swift-apprentice)
 
 > 学后感：The Swift Programming Language 这书怎么说呢, 看起来有点不是那么'友好', 所以转读这本书 RW 的入门书, 虽然很新手友好, 废话比较多, 但对于重新建立一些概念还是挺好的, 很多内容读完以后, 一下就在脑子里扎了根, 很不错! 可惜目前还是 5.3 版本. 不过读一读还是挺好的.
 
