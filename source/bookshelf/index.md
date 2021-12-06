@@ -32,11 +32,11 @@ comments: false
 
 #### 软件开发
 
+* 📖[Advanced Apple Debugging & Reverse Engineering](https://store.raywenderlich.com/products/advanced-apple-debugging-and-reverse-engineering)
 * 📖[The Swift Programming Language (Swift 5.5)](https://docs.swift.org/swift-book/)【重读】
 * 📖[iOS Apprentice](https://store.raywenderlich.com/products/ios-apprentice)
 * 📖[Design Patterns by Tutorials](https://store.raywenderlich.com/products/design-patterns-by-tutorials)
 * 📖[iOS Animations by Tutorials](https://store.raywenderlich.com/products/ios-animations-by-tutorials)
-* 📖[Advanced Apple Debugging & Reverse Engineering](https://store.raywenderlich.com/products/advanced-apple-debugging-and-reverse-engineering)
 
 #### 个人能效类
 
@@ -52,7 +52,6 @@ comments: false
 
 #### 文化与艺术
 
-* 📖[乔伊重金属主音吉他教材1,2](https://book.douban.com/subject/1159502/)
 * 📖[365日！电吉他手的养成计划](https://book.douban.com/subject/7056881/)
 * 📖[1个月电吉他新手的养成计划](https://book.douban.com/subject/7056881/)
 * 📺[吉他指板攻略 - Neo牛晖](https://www.iyamusic.com/course/278)
@@ -63,7 +62,6 @@ comments: false
 * 📺[吉他初级课程 CAGED 系统 - 尹攀](http://v.xue.taobao.com/learn.htm?spm=a2174.7765244.0.0.FE9KrR&courseId=115301)
 * 📺[视唱练耳 初级课程 - 尹攀](http://v.xue.taobao.com/learn.htm?spm=a2174.7365753.0.0.Ahe16R&courseId=116533)
 * 📺[零基础入门吉他夜里教程 - 王君](http://v.xue.taobao.com/learn.htm?spm=a2174.7765244.0.0.FE9KrR&courseId=88137)
-* 📺[Logic Pro X 零基础入门课 by 简单声音](https://apprssuyjsv8982.h5.xiaoeknow.com/v1/course/column/p_5e8414e321456_GyqNHrsf?type=3)
 * 📺[Apple GarageBand 教程系列 by Ted-E](https://www.bilibili.com/video/av23248675?p=1)
 
 ### 2021 年学到的知识
@@ -95,6 +93,10 @@ comments: false
 * 📖✅[Swift Apprentice](https://store.raywenderlich.com/products/swift-apprentice)
 
 > 学后感：The Swift Programming Language 这书怎么说呢, 看起来有点不是那么'友好', 所以转读这本书 RW 的入门书, 虽然很新手友好, 废话比较多, 但对于重新建立一些概念还是挺好的, 很多内容读完以后, 一下就在脑子里扎了根, 很不错! 可惜目前还是 5.3 版本. 不过读一读还是挺好的.
+
+* 📺[Logic Pro X 零基础入门课 by 简单声音](https://apprssuyjsv8982.h5.xiaoeknow.com/v1/course/column/p_5e8414e321456_GyqNHrsf?type=3)
+
+> 学后感: 这个软件其实很早就想学习了, 但一直觉得 GarageBand 够用, 就没怎么琢磨, 毕竟那时候的需求很简单, 最近在学习音乐制作方面的东西, 才发现这玩意的强大, 现在 Final Cut Pro 和 Logic Pro 都掌握了, 感觉舒坦了!
 
 * 📖✅[冥想正念指南 Headspace Guide to Meditation](https://www.bilibili.com/video/BV1Ht4y1r7jA?p=1)
 
