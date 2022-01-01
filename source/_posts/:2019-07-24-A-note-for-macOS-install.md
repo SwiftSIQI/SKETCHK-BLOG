@@ -2,7 +2,7 @@
 title: 'A Better Development Environment for macOS'
 comments: true
 date: 2019-07-24 19:24:30
-updated:
+updated: 2022-01-01 19:24:30
 tags:
   - macOS
 categories:
@@ -38,57 +38,50 @@ categories:
     chflags nohidden ~/Library/
     ```
 
-  * 打开`允许安装任意来源软件`的选项
+## 同步 SSH Key
 
-    ```sh
-    sudo spctl —master-disable
-    ```
+* 使用已有的 Key: 利用 AirDrop 从原先的电脑上获取 SSH Key, 文件路径应该在根目录的 `.ssh` 文件夹中.
+* 使用全新的 Key: 参考 [Github 的文档](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)生成新的 SSH Key
+
+## Surge Mac 安装
+
+* 官方网站: [传送门](https://nssurge.com/)
+* 后续的功能安装依赖翻墙!
+
+## Dracula Pro 主题配置
+
+* [Dracula — A dark theme for iTerm and 50+ apps](https://draculatheme.com/iterm/)
+* [Dracula Pro - Be more productive](https://draculatheme.com/pro)
+* 主要使用 iTerm2, Xcode, ZSH, JetBrain 的主题
+
+## Fira Code 编程字体
+
+* [Fira Code - Free monospaced font with programming ligatures](https://github.com/tonsky/FiraCode)
+* 主要使用的编程字体
 
 ## Xcode 的安装
 
 * App Store 下载并安装 Xcode
-
 * 用 `xcode-select -p`  检查 Xcode Command Line Tool 是否安装：如果安装则返回安装目录，否则返回 2
-
 * 激活 command line tool: `Preference -> Location -> command line tools`
+* 安装 Dracula 主题和 Fira Code 字体
 
 ## VSCode 安装
 
-* 使用 setting sync 同步配置
-
-  * github token 需要在 `Setting - Developer setting - Personal access tokens` 里配置
-  * gist id 是对于 gist 中 url 里用户名后面的 path
-    * 上传： `Shift + Opt + U (Sync: Update / Upload Settings)`
-    * 下载： `Shift + Opt + D (Sync: Download Settings)`
-
-  * SSH Key 生成
-    * `ssh-keygen -t rsa -C “youremail@example.com”`
-  
-  * 在 github 上注册公钥
-
-## Homebrew 安装
-
-* 安装命令
-
-  ```sh
-  /usr/bin/ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”
-  ```
-
-* 安装常用的 package
-  * xcproj
-  * coreutils
-  * openssl
-  * gpg2
-
-> 上面安装的 brew 为下面 OMZ 插件和语言环境需要的 brew
+* 官方网址: [传送门](https://code.visualstudio.com/)
+* Visual Studio Code 内置了同步配置功能, 通过 CMD + Shift + P 触发 Command Palette 后输入 Setting Sync 即可!
+* 安装 Dracula 主题和 Fira Code 字体
 
 ## iTerm 2
+
+* 解决 Preference 里 Startup 的 Warning
+  * 关闭 MacOS 系统中 General 选项里的 `Close windows when quitting an app` 的选项
 
 * 设置无限回滚
   * 安装好之后在 `Preference -> Profiles -> Terminal -> Scrollback Buffer` 中勾选上 `Unlimted scrollback`
 
 * 开启单词跳转(option + → or ←)，单词删除(option + backspace) 的功能
-  * 在 `iTerm → Preferences → Profiles → Keys → Load Preset… → Natural Text Editing`
+  * 在 `iTerm → Preferences → Profiles → Keys → Key Mappings -> Load Preset… → Natural Text Editing`
 
 * 光标设置
   * `iTerm2 → Preferences → Profiles → Text → Blinking cursor :  ON`
@@ -96,115 +89,139 @@ categories:
 * 背景色设置
   * `iTerm2 → Preferences → Profiles → window → transparency`
 
+* 安装 Dracula 主题和 Fira Code 字体
+
+## Homebrew 安装
+
+* 官方网址: [传送门](https://brew.sh/)
+* 使用系统自带的 Terminal 安装, 命令如下
+
+  ```sh
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
+
 ## ZSH 配置
 
-* 设置 zsh `chsh -s /bin/zsh`
+* macOS Monterey 开始, shell 的配置已经默认是 ZSH 了!
+
+### Oh My ZSH
+
+* 官方网站: [传送门](https://ohmyz.sh/)
 * 安装 oh my zsh
 
     ```sh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     ```
 
-* 主题配置
-  * Powerlevel9K: [GitHub - bhilburn/powerlevel9k: The most awesome Powerline theme for ZSH around!](https://github.com/bhilburn/powerlevel9k)
-  * 通过 oh-my-zsh 安装
+* 安装 Dracula 主题
+  * 移动 `dracula-pro.zsh-theme` 到 oh-my-zsh 的主题文件夹: `~/.oh-my-zsh/themes/dracula-pro.zsh-theme`
+  * 在 `~/.zshrc` 中修改配置
 
     ```sh
-    git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+    ZSH_THEME="dracula-pro"
     ```
 
-  * 在 `~/.zshrc` 中修改主题
+### Oh My ZSH 插件
+
+* 原生插件
+  * colored-man-pages: man 命令高亮
+  * git: git 相关的快捷命令
+  * xcode: Xcode 相关的快捷命令(xc, xcdd)
+  * 在 `.zshrc` 文件中修改
 
     ```sh
-    ZSH_THEME="powerlevel9k/powerlevel9k"
+    plugins=(git colored-man-pages xcode)
     ```
 
-### ZSH 的进阶修改
-
-* 自定义提示符
-  * Prompt Customization 章节有详细说明, 通过这些配置, 可以实现很多方便的功能, 例如展示每个工程中不同语言环境的版本号
-
-    ![01](01.jpg)
-
-* 字体文件
-
-  * Nerd字体: [GitHub - ryanoasis/nerd-fonts: Iconic font aggregator, collection, and patcher. 40+ patched fonts, over 3,600 glyph/icons, includes popular collections such as Font Awesome & fonts such as Hack](https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts)
-
-    * 通过 homebrew 安装
-
-      ```sh
-      brew tap homebrew/cask-fonts
-      brew cask install font-hack-nerd-font
-      ```
-
-    * 在 `~/.zshrc` 中增加对该字体的支持
-      * `POWERLEVEL9K_MODE=‘nerdfont-complete’`
-
-    * 修改 terminal 中的字体配置
-      * `iTerm → Preferences → Profiles → Text → Change Font`
-      * 选择  Hack Nerd Font
-      * 记得在 vscode 的 terminal 里同样配置下字体为 Hack Nerd Font, 否则 terminal 会出现乱码
-
-* 安装 oh-my-zsh 插件
-  * Ruby相关: rvm/gem/bundler
-  * Python相关: pyenv/pip
-  * Node.JS相关: nvm/npm/yarn
-  * iOS相关: xcode/pod/swiftpm
-  * 效率提升相关
-    * git
-    * osx: 快速操作 terminal，finder，iTunes，Spotify 等工具
-    * colored-man-pages: man 命令内容高亮
-    * git-open: 在命令行里自动打开 remote 仓库链接，需要在 npm 上安装 npm install —global git-open
-    * autojump: 自动跳转到文件，需要在 homebrew 里安装autojump
-    * zsh-autosuggestions: 根据历史记录提示可能用到的内容
-    * zsh-syntax-highlighting: 命令高亮
-    * history-substring-search: 自动查看之前输入的命令
-  * 其余插件
-    * bat:  [https://github.com/sharkdp/bat](https://github.com/sharkdp/bat)
-    * vim 插件
-      * Vundle: [GitHub - VundleVim/Vundle.vim: Vundle, the plug-in manager for Vim](https://github.com/VundleVim/Vundle.vim)
+* [bat](https://github.com/sharkdp/bat):一个 Cat 的增强版工具
+  * 安装命令 `brew install bat`
+* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting): 命令高亮
+  * 安装命令 `brew install zsh-syntax-highlighting`
+* [autojump](https://github.com/wting/autojump): 自动跳转到已经进入过的文件夹
+  * 安装命令 `brew install autojump`
 
 ## 语言环境配置
 
 ### NodeJS && NVM  
 
-* 安装过程中的注意事项
-  * 安装完毕后，需要在 zshrc 里添加如下代码
+* 官方地址: [传送门](https://github.com/nvm-sh/nvm)
+  * 需要提前通过 homebrew 安装 `git`, `curl`, 或者 `wget`
+  * 安装命令如下
+
+  ```sh
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  ```
+
+  * 成功后, 安装 node 环境, 例如
 
     ```sh
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm*
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    nvm install 16.13.1
     ```
 
-  * 官方给出的 NVM_DIR 定义是 `export NVM_DIR=“${XDG_CONFIG_HOME/:-$HOME/.}nvm”` ，需要注意 `XDG_CONFIG_HOME` 这个定义
+* 注意事项
+  * 安装完毕后，需要在 zshrc 检查尾部是否有添加下面的内容
+
+    ```sh
+    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    ```
 
 ### Ruby && RVM
 
-* 安装过程中的注意事项
-  * 执行 gpg 命令出现语言问题的情况，需要在 `.zshrc` 里声明当前环境下的语言 `export LANG=en_US.UTF-8`
-  * 执行 gpg 命令出现 `keyserver receiver faild` 无法生成的问题时，尝试以下解决方案
+* 官方地址: [传送门](https://rvm.io/)
+  * 需要提前通过 homebrew 安装 `curl`, `gpg2`
 
     ```sh
-    gpg --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+    brew install curl gpg2
     ```
+
+  * 虽然官网说要用 gpg2 来生成 GPG key, 但发现通过 homebrew 安装后并没有 gpg2 命令,只有 gpg, 所以用 gpg 执行下面的命令
+
+    ```sh
+    gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+    ```
+
+  * 安装命令如下
+
+    ```sh
+    \curl -sSL https://get.rvm.io | bash -s stable
+    ```
+
+  * 成功后, 安装 ruby 环境, 例如
+
+    ```sh
+    rvm install 2.6.5
+    ```
+
+* 注意事项
+  * 执行 gpg 命令出现语言问题的情况，需要在 `.zshrc` 里声明当前环境下的语言 `export LANG=en_US.UTF-8`
 
 ### Python && pyenv
 
-* 安装过程中的注意事项
-  * pyenv 作者给出了自动安装的脚本：[GitHub - pyenv/pyenv-installer: This tool is used to install `pyenv` and friends.](https://github.com/pyenv/pyenv-installer)
-  * 需要注意的是，在 zshrc 里面添加下面的代码
+* 官方地址: [传送门](https://github.com/pyenv/pyenv)
+  * 需要通过 homebrew 提前安装 `openssl`, `readline`, `sqlite3`, `xz`, `zlib`
+
+    ```sh
+    brew install openssl readline sqlite3 xz zlib
+    ```
+
+  * 在 `.zshrc` 中添加如下环境变量
 
     ```sh
     export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --path)"
     eval "$(pyenv virtualenv-init -)"
     ```
 
-## 配色方案
+  * 通过 pyenv 提供的 [pyenv-installer](https://github.com/pyenv/pyenv-installer) 安装
+  
+    ```sh
+    curl https://pyenv.run | bash
+    ```
 
-* [Dracula — A dark theme for iTerm and 50+ apps](https://draculatheme.com/iterm/)
+* 注意事项
+  * 在某些情况下会出现[奇怪的问题](https://github.com/pyenv/pyenv/issues/106), 看起像是某些构建过程中找到了 pyenv 环境里的 Python, 从而导致错误, 可以在 `.zshrc` 里添加如下环境变量
 
-## 编程字体
-
-* Input 字体: [Input: Fonts for Code](https://input.fontbureau.com/)
+    ```sh
+    alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+    ```
