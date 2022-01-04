@@ -72,6 +72,10 @@ categories:
 * Visual Studio Code 内置了同步配置功能, 通过 CMD + Shift + P 触发 Command Palette 后输入 Setting Sync 即可!
 * 安装 Dracula 主题和 Fira Code 字体
 
+## Terminal
+
+* 安装 Dracula 主题和 Fira Code 字体
+
 ## iTerm 2
 
 * 解决 Preference 里 Startup 的 Warning
@@ -133,10 +137,13 @@ categories:
     plugins=(git colored-man-pages xcode)
     ```
 
-* [bat](https://github.com/sharkdp/bat):一个 Cat 的增强版工具
-  * 安装命令 `brew install bat`
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting): 命令高亮
   * 安装命令 `brew install zsh-syntax-highlighting`
+  * 安装完成后在 `.zshrc` 中添加 `source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh`
+
+* [bat](https://github.com/sharkdp/bat):一个 Cat 的增强版工具
+  * 安装命令 `brew install bat`
+
 * [autojump](https://github.com/wting/autojump): 自动跳转到已经进入过的文件夹
   * 安装命令 `brew install autojump`
 
@@ -145,7 +152,7 @@ categories:
 ### NodeJS && NVM  
 
 * 官方地址: [传送门](https://github.com/nvm-sh/nvm)
-  * 需要提前通过 homebrew 安装 `git`, `curl`, 或者 `wget`
+  * 需要提前通过 homebrew 安装 `git`, `curl`
   * 安装命令如下
 
   ```sh
@@ -193,6 +200,12 @@ categories:
     rvm install 2.6.5
     ```
 
+  * 安装 CocoaPods
+
+    ```sh
+    sudo gem install cocoapods
+    ```
+
 * 注意事项
   * 执行 gpg 命令出现语言问题的情况，需要在 `.zshrc` 里声明当前环境下的语言 `export LANG=en_US.UTF-8`
 
@@ -217,6 +230,12 @@ categories:
   
     ```sh
     curl https://pyenv.run | bash
+    ```
+
+  * 成功后安装 Python 环境
+  
+    ```sh
+    pyenv install 3.10.1
     ```
 
 * 注意事项
