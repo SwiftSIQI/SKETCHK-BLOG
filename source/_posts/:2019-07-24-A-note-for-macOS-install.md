@@ -189,7 +189,7 @@ categories:
     ```
 
   * 安装命令如下
-
+  
     ```sh
     \curl -sSL https://get.rvm.io | bash -s stable
     ```

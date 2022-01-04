@@ -21,9 +21,6 @@ comments: false
 #### 计算机基础
 
 * 📖[编码](https://book.douban.com/subject/20260928/)
-* 📖[计算机是怎么跑起来的](https://book.douban.com/subject/26397183/)【重读】
-* 📖[程序是怎么跑起来的](https://book.douban.com/subject/26365491/)【重读】
-* 📖[网络是怎么连接的](https://book.douban.com/subject/26941639/)
 * 📖[30 天自制操作系统](https://book.douban.com/subject/11530329/)
 * 📖[自制编程语言](https://book.douban.com/subject/25735333/)
 * 📖[程序员的数学 1](https://book.douban.com/subject/19949020/)
@@ -40,9 +37,8 @@ comments: false
 
 #### 个人能效类
 
-* 📖[高效能人士的七个习惯](https://book.douban.com/subject/26284789/)【重读】
-* 📖[番茄工作法](https://book.douban.com/subject/5916234/)【重读】
 * 📖[单核工作法](https://book.douban.com/subject/27177909/)【重读】
+* 📖[高效能人士的七个习惯](https://book.douban.com/subject/26284789/)【重读】
 * 📖[自控力](https://book.douban.com/subject/10786473/)
 * 📖[通往财富自由之路](https://book.douban.com/subject/27170672/)
 * 📖[认知天性](https://book.douban.com/subject/30353486/)
@@ -56,29 +52,48 @@ comments: false
 * 📖[1个月电吉他新手的养成计划](https://book.douban.com/subject/7056881/)
 * 📺[吉他指板攻略 - Neo牛晖](https://www.iyamusic.com/course/278)
 * 📺[吉他指板攻略(进阶篇)-Neo牛晖](https://www.iyamusic.com/course/469)
-* 📺[玩转节奏训练营 - Neo牛晖](https://www.iyamusic.com/course/739)
-* 📺[玩转和声 - Neo牛晖](https://www.iyamusic.com/course/512)
-* 📺[Blues 吉他入门 - Neo牛晖](https://www.iyamusic.com/course/558)
 * 📺[吉他初级课程 CAGED 系统 - 尹攀](http://v.xue.taobao.com/learn.htm?spm=a2174.7765244.0.0.FE9KrR&courseId=115301)
 * 📺[视唱练耳 初级课程 - 尹攀](http://v.xue.taobao.com/learn.htm?spm=a2174.7365753.0.0.Ahe16R&courseId=116533)
 * 📺[零基础入门吉他夜里教程 - 王君](http://v.xue.taobao.com/learn.htm?spm=a2174.7765244.0.0.FE9KrR&courseId=88137)
 * 📺[Apple GarageBand 教程系列 by Ted-E](https://www.bilibili.com/video/av23248675?p=1)
 
-### 2021 年学到的知识
+### 2022 年学到的知识
+
+* 📖[Data Structures and Algorithms in Swift](https://store.raywenderlich.com/products/data-structures-and-algorithms-in-swift)
+
+> 学后感：缺失的东西终究要补完，等读完写感受！
+
+* 📖[Computer Systems: A Programmer’s Perspective](http://csapp.cs.cmu.edu)
+
+> 学后感：英语还是要学习的, 等读完写感受!
 
 * 📖[英文文法有道理!重新認識英文文法觀念](https://book.douban.com/subject/23846372/)
 
 > 学后感：英语还是要学习的, 等读完写感受!
 
-* 📖[Data Structures and Algorithms in Swift](https://store.raywenderlich.com/products/data-structures-and-algorithms-in-swift)
+* 📖[JavaScript 教程](https://wangdoc.com/javascript/)
 
-> 学后感：希望年前能看完!
+> 学后感：因为工作上的技术项目与 JS 有着太多的关联，所以感觉是时候系统的读了一下相关的书籍了，选来选去，挑了阮一峰老师的这本工具书，说实话，这书真的很直接，快速过一遍很有价值！
 
-* 📺[CS 50](https://cs50.harvard.edu/college/2020/spring/)
+### 2021 年学到的知识
+
+* 📺✅[玩转节奏训练营 - Neo牛晖](https://www.iyamusic.com/course/739)
+
+> 学后感：很吃力的把课程跟下来了，但感觉也是学了个皮毛，节奏感缺失有提升，但很多内容并没有消化，有时间可以在反复练习几遍
+
+* 📺✅❌[玩转和声 - Neo牛晖](https://www.iyamusic.com/course/512)
+
+> 学后感：真的感觉没学明白，可能一方面是耳朵不够敏感，另一方面就是真的乐理也不够扎实，老师说的内容经常反应很久才明白，感觉搞不定，以后再来学！
+
+* 📺✅[Blues 吉他入门 - Neo牛晖](https://www.iyamusic.com/course/558)
+
+> 学后感：算事自己的 Blues 入门，更多的是理论入门，还是需要花时间去弹更多的乐曲来理解这些内容！
+
+* 📺✅[CS 50](https://cs50.harvard.edu/college/2020/spring/)
 
 > 学后感：重新看了这一系列的视频, 又有了一些新的感触, 另外想起当时有看过某个人对这个课的评论是这样, 计算机的入门课应该有且只有这一种教法, 我现在深以为然!
 
-* 📺[3 小时搞定 C 语言](https://www.bilibili.com/cheese/play/ep2088)
+* 📺✅[3 小时搞定 C 语言](https://www.bilibili.com/cheese/play/ep2088)
 
 > 学后感：初衷是为了快速回顾一下 C 语言的知识点, 所以 B 站买了这个视频课, 课程内容属于围绕基本知识点展开的, 基本没废话, 感觉还是可以的, 毕竟 3 小时嘛, ROI 还算毕竟高.
 
@@ -94,7 +109,7 @@ comments: false
 
 > 学后感：The Swift Programming Language 这书怎么说呢, 看起来有点不是那么'友好', 所以转读这本书 RW 的入门书, 虽然很新手友好, 废话比较多, 但对于重新建立一些概念还是挺好的, 很多内容读完以后, 一下就在脑子里扎了根, 很不错! 可惜目前还是 5.3 版本. 不过读一读还是挺好的.
 
-* 📺[Logic Pro X 零基础入门课 by 简单声音](https://apprssuyjsv8982.h5.xiaoeknow.com/v1/course/column/p_5e8414e321456_GyqNHrsf?type=3)
+* 📺✅[Logic Pro X 零基础入门课 by 简单声音](https://apprssuyjsv8982.h5.xiaoeknow.com/v1/course/column/p_5e8414e321456_GyqNHrsf?type=3)
 
 > 学后感: 这个软件其实很早就想学习了, 但一直觉得 GarageBand 够用, 就没怎么琢磨, 毕竟那时候的需求很简单, 最近在学习音乐制作方面的东西, 才发现这玩意的强大, 现在 Final Cut Pro 和 Logic Pro 都掌握了, 感觉舒坦了!
 
@@ -105,6 +120,18 @@ comments: false
 * 📖✅[认知红利](https://book.douban.com/subject/34793488/)
 
 > 学后感：这书的大部分内容对于重新建立日常的认知是十分有帮助的, 尤其"从内对外"和"从外对内"的身心统一, 真的是醍醐灌顶. 有机会要再多读几遍!
+
+* 📖✅[网络是怎么连接的](https://book.douban.com/subject/26941639/)
+
+> 学后感：发现这个系列又有了新书，所以随手就看了一遍，还是科普向的读物，但是相比于之前的慕课网的【编程必备基础 计算机组成原理+操作系统+计算机网络】课程，又显得太简单了，总之这个系列的定位可能还是偏向建立概念吧。
+
+* 📖✅[计算机是怎么跑起来的](https://book.douban.com/subject/26397183/)【重读】
+
+> 学后感：同【程序是怎么跑起来的】，也是早年间读完的一本书，今年又简单翻了翻，感觉对于初学者建立概念还是不错，当作科普读物很好！
+
+* 📖✅[程序是怎么跑起来的](https://book.douban.com/subject/26365491/)【重读】
+
+> 学后感：早年间读完的一本书，今年又简单翻了翻，感觉对于初学者建立概念还是不错，当作科普读物很好！
 
 ### 2020 年学到的知识
 
@@ -157,6 +184,10 @@ comments: false
 > 读后感：总体来说是一本值得一读的书，里面有很多的小细节是平时不知道的，也很实用。
 
 ### 2019 年学到的知识
+
+* 📖✅[番茄工作法](https://book.douban.com/subject/5916234/)【重读】
+
+> 学后感：时常复习一下番茄工作法，加深一下认识，重要不是每次 25 分钟的番茄钟，而是每天 25 分钟后的复盘!
 
 * 📺❌[2D Apple Games by Tutorials](https://store.raywenderlich.com/products/2d-apple-games-by-tutorials) - 12 月
 
@@ -276,4 +307,4 @@ comments: false
 * 📺✅[Keynote 教程 by TeamMax](https://i.youku.com/i/UNDA3MzU0MDY0?spm=a2hzp.8253869.0.0)
 
 > 学后感：吐血推荐，可以网站也没了，只能在优酷上搜到一些零星的视频了，真的很好的一个教程！
- 
+
