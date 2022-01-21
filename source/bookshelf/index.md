@@ -82,7 +82,7 @@ comments: false
 
 * 📺✅[3 小时搞定 C 语言](https://www.bilibili.com/cheese/play/ep2088)
 
-> 学后感：初衷是为了快速回顾一下 C 语言的知识点, 所以 B 站买了这个视频课, 课程内容属于围绕基本知识点展开的, 基本没废话, 感觉还是可以的, 毕竟 3 小时嘛, ROI 还算毕竟高.
+> 学后感：初衷是为了快速回顾一下 C 语言的知识点, 方便后面学习 CSAPP, 听小青意思是书里面不少 C 的代码, 所以 B 站买了这个视频课, 课程内容属于围绕基本知识点展开的, 基本没废话, 感觉还是可以的, 毕竟 3 小时嘛, ROI 还算毕竟高.
 
 * 📖✅[Dive Into Design Patterns](https://refactoring.guru/design-patterns/books)
 
