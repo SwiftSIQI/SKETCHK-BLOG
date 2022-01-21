@@ -20,27 +20,22 @@ comments: false
 
 #### 计算机基础
 
-* 📖[编码](https://book.douban.com/subject/20260928/)
-* 📖[30 天自制操作系统](https://book.douban.com/subject/11530329/)
-* 📖[自制编程语言](https://book.douban.com/subject/25735333/)
 * 📖[程序员的数学 1](https://book.douban.com/subject/19949020/)
 * 📖[程序员的数学 2-概览统计](https://book.douban.com/subject/26593822/)
 * 📖[程序员的数学 3-线性代数](https://book.douban.com/subject/26740548/)
+* 📖[30 天自制操作系统](https://book.douban.com/subject/11530329/)
+* 📖[自制编程语言](https://book.douban.com/subject/25735333/)
 
 #### 软件开发
 
 * 📖[Advanced Apple Debugging & Reverse Engineering](https://store.raywenderlich.com/products/advanced-apple-debugging-and-reverse-engineering)
-* 📖[The Swift Programming Language (Swift 5.5)](https://docs.swift.org/swift-book/)【重读】
-* 📖[iOS Apprentice](https://store.raywenderlich.com/products/ios-apprentice)
-* 📖[Design Patterns by Tutorials](https://store.raywenderlich.com/products/design-patterns-by-tutorials)
-* 📖[iOS Animations by Tutorials](https://store.raywenderlich.com/products/ios-animations-by-tutorials)
+* 📖[Expert Swift](https://www.raywenderlich.com/books/expert-swift)
+* 📖[SwiftUI by Tutorials](https://www.raywenderlich.com/books/swiftui-by-tutorials)
+* 📖[Combine: Asynchronous Programming with Swift](https://www.raywenderlich.com/books/combine-asynchronous-programming-with-swift)
+* 📖[ARKit by Tutorials](https://github.com/raywenderlich/deprecated-books)
 
 #### 个人能效类
 
-* 📖[单核工作法](https://book.douban.com/subject/27177909/)【重读】
-* 📖[高效能人士的七个习惯](https://book.douban.com/subject/26284789/)【重读】
-* 📖[自控力](https://book.douban.com/subject/10786473/)
-* 📖[通往财富自由之路](https://book.douban.com/subject/27170672/)
 * 📖[认知天性](https://book.douban.com/subject/30353486/)
 * 📖[Ultralearning](https://book.douban.com/subject/32144202/)
 * 📖[英语魔法师之语法俱乐部](https://book.douban.com/subject/1014914/)
@@ -59,13 +54,13 @@ comments: false
 
 ### 2022 年学到的知识
 
+* [Apple Augmented Reality by Tutorials](https://www.raywenderlich.com/books/apple-augmented-reality-by-tutorials)
+
+> 学后感: 2022 年了, 得学点 AR 了, 万一今年发布了什么不得了的东西, 是吧?
+
 * 📖[Data Structures and Algorithms in Swift](https://store.raywenderlich.com/products/data-structures-and-algorithms-in-swift)
 
 > 学后感：缺失的东西终究要补完，等读完写感受！
-
-* 📖[Computer Systems: A Programmer’s Perspective](http://csapp.cs.cmu.edu)
-
-> 学后感：英语还是要学习的, 等读完写感受!
 
 * 📖[英文文法有道理!重新認識英文文法觀念](https://book.douban.com/subject/23846372/)
 
@@ -76,6 +71,10 @@ comments: false
 > 学后感：因为工作上的技术项目与 JS 有着太多的关联，所以感觉是时候系统的读了一下相关的书籍了，选来选去，挑了阮一峰老师的这本书，说实话，它更像一个工具书，真的是硬着头皮读完了，有些特别细节的 API 没仔细看，感觉想写好更现代的 JS 代码，还需要再看看阮一峰老师的 ES6 的那本书，至少把 Class，Moudle 和 Async/Await 那块看了！
 
 ### 2021 年学到的知识
+
+* 📖✅[Computer Systems: A Programmer’s Perspective](http://csapp.cs.cmu.edu)
+
+> 学后感：终于还是在年前把这本书扫完了,学完以后确实解答了之前在工具组做底层编译时的一些困惑,但整体书里确实还有一部分细节没消化,一方面可能是自己的实践经验比较少,另一方也是没有动手把所有的作业做了,等明年二刷的时候希望能把作业都做了,对了,学习过程中,还发现一个[宝藏 UP 主](https://space.bilibili.com/354767108), 边学边看还挺不错的!
 
 * 📺❌[CS 50](https://cs50.harvard.edu/college/2020/spring/)
 
