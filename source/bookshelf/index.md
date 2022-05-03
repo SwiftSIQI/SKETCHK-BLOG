@@ -30,7 +30,6 @@ comments: false
 
 #### 软件开发
 
-* 📖[Computer Systems: A Programmer’s Perspective](http://csapp.cs.cmu.edu)
 * 📖[Crafting Interpreters](https://craftinginterpreters.com/)
 * 📖[The Swift Programming Language (Swift 5.5)](https://docs.swift.org/swift-book/)【重读】
 * 📖[Advanced Apple Debugging & Reverse Engineering](https://store.raywenderlich.com/products/advanced-apple-debugging-and-reverse-engineering)
@@ -61,6 +60,10 @@ comments: false
 
 ### 2022 年学到的知识
 
+* 📖[Computer Systems: A Programmer's Perspective](http://csapp.cs.cmu.edu/)
+
+> 学后感：缺失的东西终究要补完，等读完写感受！
+
 * 📖[Data Structures and Algorithms in Swift](https://store.raywenderlich.com/products/data-structures-and-algorithms-in-swift)
 
 > 学后感：缺失的东西终究要补完，等读完写感受！
@@ -69,9 +72,25 @@ comments: false
 
 > 学后感：英语还是要学习的, 等读完写感受!
 
-* 📖[SwiftUI by Tutorials](https://www.raywenderlich.com/books/swiftui-by-tutorials)
+* 📺✅[3 小时搞定 C 语言](https://www.bilibili.com/cheese/play/ep2088)
 
-> 学后感: 为了 3 月份的讲座, 走起!
+> 学后感：初衷是为了快速回顾一下 C 语言的知识点, 方便后面学习 CSAPP, 听小青意思是书里面不少 C 的代码, 所以 B 站买了这个视频课, 课程内容属于围绕基本知识点展开的, 基本没废话, 感觉还是可以的, 毕竟 3 小时嘛, ROI 还算毕竟高.
+
+* ✅📖[少数派系统指南·iOS 15](https://sspai.com/series/228)
+
+> 学后感：对于不断更新的 iOS 系统, 虽然自己是个 iOS 开发, 但也觉得好像了解的不够全面, 尤其是一些新功能的使用逻辑完全不太理解, 还好通过这个教程, 我看到了很多新的东西, 也让我去思考这些新的功能都是如何实现的, 更有意思的是从使用者的角度去看的话, 我也学到了很多好用的技巧, 确实不错, 当然教程我是比较快的读完了一遍, 没有特别详细的阅读, 感觉[macOS 效率手册](https://book.douban.com/subject/34454933/)这本书一样, 都让我重新认识了手中的设备
+
+* ✅📖[Cubox 6.0 工具升值包](https://sspai.com/series/219)
+
+> 学后感：之前一直使用 Reeder 和 Pocket 作为技术资讯的收纳载体, 不过两个 app 先后被墙了, 加上价格也没有太多优势, 就决定找找其他的替代品, 用来用去, 感觉这个 Cubox 是真不错, 使用体验也挺好, 看到 少数派有卖相关的大礼包, 还带了个使用教程, 就直接下单了, 阅读完发现这个 app 里的小心思还是蛮多的, 后面可以长期使用了!
+
+* ✅📖[滴答清单工具升值包](https://sspai.com/series/261)
+
+> 学后感：之前一直是 Todoist 的粉丝, 但价格一直往上涨, 看看自己的腰包, 决定放弃, 另外 Apple 自带的备忘录虽然也不错, 但确实在不少场景都没法满足需求, 也是用了一圈以后, 决定使用这个产品, 仔细看了少数派的这个大礼包的使用文档, 发现不少功能还不错, 虽然可能自己的使用场景没那么多, 但以后万一用到了呢? 
+
+* 📺✅[Blender3D初学者教程 by 羊羊羊的教室](https://space.bilibili.com/299275195/channel/seriesdetail?sid=338965)
+
+> 学后感: UP主属于偏实战型的风格, 基本一节课一个作品, 刚开始的学习节奏还蛮有成就感的, 不过后面因为总是会有一些重复的内容, 所以有点类似刷本的厌倦感, 不过对于免费的教程还有什么可以吐槽的呢, 整体而言算是比较好的中文教程了, 后面有兴趣再看看 [Guru 的甜甜圈教程](https://www.youtube.com/playlist?list=PLjEaoINr3zgFX8ZsChQVQsuDSjEqdWMAD)和 [CrossMind Studio 的七天教程](https://www.youtube.com/playlist?list=PLgO2ChD7acqH5S3fCO1GbAJC55NeVaCCp)
 
 * 📺✅[零基础上手Figma软件系统教程](https://www.gogoup.com/course/GMTUxMQ==?utm_source=gogoup&utm_medium=search&utm_content=10&utm_term=figma&utm_type=1)
 
@@ -90,10 +109,6 @@ comments: false
 * 📺❌[CS 50](https://cs50.harvard.edu/college/2020/spring/)
 
 > 学后感：重新看了这一系列的视频, 又有了一些新的感触, 另外想起当时有看过某个人对这个课的评论是这样, 计算机的入门课应该有且只有这一种教法, 我现在深以为然! 后面因为母亲生病，只看了前 4 节，希望后面能补全
-
-* 📺✅[3 小时搞定 C 语言](https://www.bilibili.com/cheese/play/ep2088)
-
-> 学后感：初衷是为了快速回顾一下 C 语言的知识点, 方便后面学习 CSAPP, 听小青意思是书里面不少 C 的代码, 所以 B 站买了这个视频课, 课程内容属于围绕基本知识点展开的, 基本没废话, 感觉还是可以的, 毕竟 3 小时嘛, ROI 还算毕竟高.
 
 * 📖✅[Dive Into Design Patterns](https://refactoring.guru/design-patterns/books)
 
