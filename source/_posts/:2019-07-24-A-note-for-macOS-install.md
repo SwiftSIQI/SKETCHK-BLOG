@@ -139,13 +139,16 @@ categories:
 
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting): 命令高亮
   * 安装命令 `brew install zsh-syntax-highlighting`
-  * 安装完成后在 `.zshrc` 中添加 `source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh`
+  * 根据命令行的提示在 `.zshrc` 增加相关内容(Caveats 里的提示)
+  * ![01](01.png)
 
 * [bat](https://github.com/sharkdp/bat):一个 Cat 的增强版工具
   * 安装命令 `brew install bat`
 
 * [autojump](https://github.com/wting/autojump): 自动跳转到已经进入过的文件夹
   * 安装命令 `brew install autojump`
+  * 根据命令行的提示在 `.zshrc` 增加相关内容(Caveats 里的提示)
+  * ![02](02.png)
 
 ## 语言环境配置
 
@@ -212,10 +215,11 @@ categories:
 ### Python && pyenv
 
 * 官方地址: [传送门](https://github.com/pyenv/pyenv)
-  * 需要通过 homebrew 提前安装 `openssl`, `readline`, `sqlite3`, `xz`, `zlib`
-
+  * 直接通过 homebrew 进行安装即可
+  
     ```sh
-    brew install openssl readline sqlite3 xz zlib
+    brew update
+    brew install pyenv
     ```
 
   * 在 `.zshrc` 中添加如下环境变量
@@ -224,12 +228,6 @@ categories:
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init --path)"
     eval "$(pyenv virtualenv-init -)"
-    ```
-
-  * 通过 pyenv 提供的 [pyenv-installer](https://github.com/pyenv/pyenv-installer) 安装
-  
-    ```sh
-    curl https://pyenv.run | bash
     ```
 
   * 成功后安装 Python 环境
