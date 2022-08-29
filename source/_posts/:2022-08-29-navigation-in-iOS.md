@@ -35,7 +35,7 @@ categories:
 
 在 iOS 系统中， 苹果公司不仅建议开发者遵循 MVC 开发框架，在它们的代码里也可以看到 MVC 的影子，导航栏组件的构成就是一个类似 MVC 的结构，让我们先看看下面这张图：
 
-![02导航栏组件关系图.png](2A3A5FA75CD2A96639EC88514E1783A5.png)
+![01导航栏组件关系图.png](1.png)
 
 在这张图里，我们可以将 UINavigationController 看做是 C，UINavigationBar 看做是 V，而 UIViewController 和 UINavigationItem 组成的 Stack 可以看做是 M。这里要说明的是，每个 UIViewController 都有一个属于自己的 UINavigationItem，也就是说它们是一一对应的。
 
@@ -51,7 +51,7 @@ UINavigationController 通过驱动 Stack 中的 UIViewController 的变化来�
 
 大家可以通过下图获得更为直观的感受，进而了解到导航栏组件在 push 过程中各个方法的调用顺序。
 
-![03push过程中的方法调用顺序图.png](B3F008769685C69B277C2BF5977ECA86.png)
+![02push过程中的方法调用顺序图.png](2.png)
 
 值得注意的地方有两点：
 
@@ -61,7 +61,7 @@ UINavigationController 通过驱动 Stack 中的 UIViewController 的变化来�
 
 下面这张图展示了导航栏在 pop 过程中各个方法的调用顺序：
 
-![04pop过程中的方法调用顺序图.png](ED4B8DFDEC9640948B9F22962A4206DC.png)
+![03pop过程中的方法调用顺序图.png](3.png)
 
 除了上面说到的两点，pop 过程中还需要注意一点，那就是从 B 返回到 A 的过程中，A 视图控制器的 `viewDidLoad` 方法并不会被调用。关于这个问题，只要提醒一下，大多数人都会反应过来是为什么。不过在实际开发过程中，总会有人忘记这一点。
 
@@ -87,17 +87,17 @@ UINavigationController 通过驱动 Stack 中的 UIViewController 的变化来�
 
 虽然导航栏组件的 push 和 pop 动画给人一种每次操作后都会创建一遍导航栏组件的错觉，但实际上这些 ViewController 都是由一个 NavigationController 所管理，所以你看到的 NavigationBar 是唯一的。
 
-![05导航栏示例图.png](D36D5C9AAA6A360EAAD2DDE868B2874A.png)
+![04导航栏示例图.png](4.png)
 
 在 NavigationController 的 Stack 存储结构下，每当 Stack 中的 ViewController 修改了导航栏，势必会影响其他 ViewController 展示的效果。
 
 例如下图所示的场景，如果 NavigationBar 原先的颜色是绿色，但之后进入 Stack 里的 ViewController 将 NavigationBar 颜色修改为紫色后，在此之后 push 的 ViewController 会从默认的绿色变为紫色，直到有新的 ViewController 修改导航栏颜色才会发生变化。
 
-![06导航栏push状态.png](342D901C7D385E6AA7EBF2F90A212DB9.png)
+![05导航栏push状态.png](5.png)
 
 虽然在 push 过程中，NavigationBar 的变化听起来合情合理，但如果你在 NavigationBar 为绿色的 ViewController 里设置不当的话，那么当你 pop 回这个 ViewController 时，NavigationBar 可就不一定是绿色了，它还会保持为紫色的状态。
 
-![07导航栏pop状态.png](4387FB7A518A2D0ABFC33915A8B6F188.png)
+![06导航栏pop状态.png](6.png)
 
 通过这个例子，我们大概会意识到在导航栏里的 Stack 中，每个 ViewController 都可以永久的影响导航栏样式，这种全局性的变化要求我们在实际开发中必须坚持“谁修改，谁复原”的原则，否则就会造成导航栏状态的混乱。这不仅仅是样式上的混乱，在一些极端状况下，还有可能会引起 Stack 混乱，进而造成 Crash 的情况。
 
@@ -112,7 +112,7 @@ UINavigationController 通过驱动 Stack 中的 UIViewController 的变化来�
 > When the visibility of its views changes, a view controller automatically calls its own methods so that subclasses can respond to the change. Use a method like viewWillAppear: to prepare your views to appear onscreen, and use the viewWillDisappear: to save changes or other state information. Use other methods to make appropriate changes.
 > Figure 1 shows the possible visible states for a view controller’s views and the state transitions that can occur. Not all ‘will’ callback methods are paired with only a ‘did’ callback method. You need to ensure that if you start a process in a ‘will’ callback method, you end the process in both the corresponding ‘did’ and the opposite ‘will’ callback method.
 
-![08视图管理器的状态转换.jpg](B3BFE62094A677FE47BB98434E43EBAB.jpg)
+![07视图管理器的状态转换.jpg](7.jpg)
 
 这里很好的解释了所有的 will 系列方法和 did 系列方法的对应关系，同时也给我们吃了一个定心丸，那就是在 appearing 和 disappearing 状态之间会由 will 系列方法进行衔接，避免了状态中断。这对于连续 push 或者连续 pop 的情况是及其重要的，否则我们无法做到 “谁修改，谁复原”的原则。
 
@@ -178,7 +178,7 @@ UINavigationController 通过驱动 Stack 中的 UIViewController 的变化来�
 
 这三个词更多的是用来表述一种状态，不需要量化，所以这与这三个词相关的属性，一般都是 BOOL 类型。
 
-![09transparent-translucent-opaque的区别.png](8AF8BB49F297C66A74B1DD20EDEA3D86.png)
+![08transparent-translucent-opaque的区别.png](8.png)
 
 `alpha` 和 `opacity` 经常会在一起使用，它要表示的就是透明度，在 Web 端这两个属性有着明显的区别。
 
@@ -200,7 +200,7 @@ div {
 
 由于这两个词都是在描述程度，所以我们看到它们都是 CGFloat 类型：
 
-![10alpha-opacity的区别.png](D4AD0EE5F2B879AE5232C7C5A689FBF2.png)
+![9alpha-opacity的区别.png](9.png)
 
 ### 转场过程中需要注意的问题和细节
 
@@ -226,7 +226,7 @@ translucent 会影响导航栏组件里 ViewController 的 View 布局，这里�
 
 这些调整布局的 API 背后是一套基于 `topLayoutGuide` 和 `bottomLayoutGuide` 的计算而已，在 iOS 11 后，Apple 提出了 Safe Area 的概念，将原先分裂开来的 `topLayoutGuide` 和 `bottomLayoutGuide` 整合到一个统一的 LayoutGuide 中，也就是所谓的 Safe Area，这个改变看起来似乎不是很大，但它的出现确实方便了开发者。
 
-![11safe-area示例图.jpg](10BEC609BE058103F26DE4CB79962D98.jpg)
+![10safe-area示例图.jpg](10.jpg)
 
 如果想对 Safe Area 带来的改变有更全面的认识，十分推荐阅读 Rosberry 的工程师 Evgeny Mikhaylov 在 Medium 上的文章 [iOS Safe Area](https://medium.com/rosberryapps/ios-safe-area-ca10e919526f)，这篇文章基本涵盖了 iOS 11 中所有与 Safe Area 相关的 API 并给出了真正合理的解释。
 
@@ -260,7 +260,7 @@ if (@available(iOS 11.0, *)) {
 
 `backIndicatorImage` 和 `backIndicatorTransitionMaskImage` 操作的是 NavigationBar 里返回按钮的图片，也就是下图红色圆圈所标注的区域。
 
-![12backIndicator示例图.png](5BC8560F1B92425F2310FB96F9EA2773.png)
+![11backIndicator示例图.png](11.png)
 
 想要成功的自定义返回按钮的图标样式，我们需要同时设置这两个 API ，从字面上来看，它们一个是返回图片本身，另一个是返回图片在转场时用到的 mask 图片，看起来不怎么难，我们写一段代码试试效果：
 
@@ -271,11 +271,11 @@ self.navigationController.navigationBar.backIndicatorTransitionMaskImage = [UIIm
 
 代码里的图片如下所示：
 
-![13mask图片示例图1.png](216A270BBBE4E0FCF7009440962EFC67.png)
+![12mask图片示例图1.png](12.png)
 
 也许大多数人在这里会都认为，mask 图片会遮挡住文字使其在遇到返回按钮右边缘的时候就消失。但实际的运行效果是怎么样子的呢？我们来看一下：
 
-![14mask动态效果图1.gif](343E89601B7BA9E82E10D5C148633A56.gif)
+![13mask动态效果图1.gif](13.gif)
 
 在上面的图片中，我们可以看到返回按钮的文字从返回按钮的图片下面穿过并且文字被图片所遮挡，这种动画看起来十分奇怪，这是无法接受的。我们需要做点修改：
 
@@ -286,11 +286,11 @@ self.navigationController.navigationBar.backIndicatorTransitionMaskImage = [UIIm
 
 这一次我们将 `backIndicatorTransitionMaskImage` 改为 indicatorImage 所用的图片。
 
-![15mask图片示例图2.png](76156D99DC98D6F9957814020E9C3A80.png)
+![14mask图片示例图2.png](14.png)
 
 到这里，可能大多数人都会好奇，这代码也能行？让我们看下它实际的效果：
 
-![16mask动态效果图2.gif](9AC17AABCC42FB80CEFF68579AE9A071.gif)
+![15mask动态效果图2.gif](15.gif)
 
 在上面的图中，我们看到文字在到达图片的右边缘时就从下方穿过并被完全遮盖住了，这种动画效果虽然比上面好一些，但仍然有改进的空间，不过这里我们先不继续优化了，我们先来讨论一下它们背后的运作原理。
 
@@ -306,11 +306,11 @@ iOS 系统会将 indicatorImage 中不透明的颜色绘制成返回按钮的图
 
 让我们来看一下下面这个示例图，为了更好的区分，我们将 indicatorTransitionMaskImage 用红色进行标注。黑色仍然是 indicatorImage。
 
-![17mask图片示例图3.jpg](8D3F6B6533098D048ECF73835677DC92.jpg)
+![16mask图片示例图3.jpg](16.jpg)
 
 按照刚才介绍的原理，我们应该可以理解，现在文字只会出现在红色区域，那么它的实际效果是什么样子的呢，我们可以看下图：
 
-![18mask动态效果图3.gif](F06A6E2C5A65BC3DB4A4565AEBCA4DAD.gif)
+![17mask动态效果图3.gif](17.gif)
 
 现在，一个完美的返回动画，诞生啦！
 
@@ -331,13 +331,13 @@ iOS 系统会将 indicatorImage 中不透明的颜色绘制成返回按钮的图
 常见的解决方案如下所示：
 
 1. 重新实现一个类似 UINavigationController 的容器类视图管理器，这个容器类视图管理器做好不同 ViewController 间的导航栏样式转换工作，而每个 ViewController 只需要关心自身的样式即可。
-![19常见的导航栏转场方案1示例图.png](0ABEE92FAC29F4A1558F743089D3FC35.png)
+![18常见的导航栏转场方案1示例图.png](18.png)
 
 2. 将系统原有导航栏的背景设置为透明色，同时在每个 ViewController 上添加一个 View 或者 NavigationBar 来充当我们实际看到的导航栏，每个 ViewController 同样只需要关心自身的样式即可。
-![20常见的导航栏转场方案2示例图.png](2C97E3D23620418C77773E34BE2E1B0E.png)
+![19常见的导航栏转场方案2示例图.png](19.png)
 
 3. 在转场的过程中隐藏原有的导航栏并添加假的 NavigationBar，当转场结束后删除假的 NavigationBar 并恢复原有的导航栏，这一过程可以通过 Swizzle 的方式完成，而每个 ViewController 只需要关心自身的样式即可。
-![21常见的导航栏转场方案3示例图.png](D01AB290004DCD922525415AFA8E8513.png)
+![20常见的导航栏转场方案3示例图.png](20.png)
 
 这三种方案各有优劣，我们在网上也可以看到很多关于它们的讨论。
 
@@ -399,7 +399,7 @@ iOS 系统会将 indicatorImage 中不透明的颜色绘制成返回按钮的图
 
 为了让大家更好地理解上面的内容，请参考下图：
 
-![22KMNavigationBarTransiton的原理图-push流程.png](087A072EBD251D666B9F0BE51BDEDA9E.png)
+![21KMNavigationBarTransiton的原理图-push流程.png](21.png)
 
 说完了 push 过程，我们再来说一下从页面 B pop 回页面 A 的过程，几个核心方法的调用顺序如下：
 
@@ -415,7 +415,7 @@ iOS 系统会将 indicatorImage 中不透明的颜色绘制成返回按钮的图
 
 同样，我们可以参考下面的图来理解上面所说的内容：
 
-![23KMNavigationBarTransiton的原理图-pop流程.png](BE9440B987D126CEE4F539D595B08DDA.png)
+![22KMNavigationBarTransiton的原理图-pop流程.png](22.png)
 
 现在，大家应该对我们美团的解决方案有了一定的认识，但在实际开发过程中，还需要考虑一些布局和适配的问题。
 
@@ -481,9 +481,10 @@ self.navigationController.navigationBar.shadowImage = [UIImage new];
 1. 当前后两个 ViewController 的导航栏都处于隐藏状态，然后在后一个 ViewController 中使用返回手势 pop 到一半时取消，再连续 push 多个页面时会造成导航栏的 Stack 混乱或者 Crash。
 2. 当页面的层级结构大体如下所示时，在红色导航栏的 Stack 中，返回手势会大概率的出现跨层级的跳转，多次后会导致整个导航栏的 Stack 错乱或者 Crash。
 
-![24引发导航栏栈错乱的视图层级.png](51515EC5D62FB7414AD331D496A3221B.png)
+![23引发导航栏栈错乱的视图层级.png](23.png)
 
 ### 导航栏内置组件的布局规范
+
 导航栏里的组件布局在 iOS 11 后发生了改变，原有的一些解决方案已经失效，这些内容不在本篇文章的讨论范围之内，推荐阅读[UIBarButtonItem 在 iOS 11 上的改变及应对方案](http://sketchk.xyz/2018/02/23/How-to-make-your-UIBarButtonItem-perfect-match-in-iOS/)，这篇文章详细的解释了 iOS 11 里的变化和可行的应对方案。
 
 ## 总结
@@ -516,4 +517,4 @@ self.navigationController.navigationBar.shadowImage = [UIImage new];
 
 ## 招聘
 
-美团平台诚招 iOS、Android、FE 高级/资深工程师和技术专家，Base 北京、上海、成都，欢迎有兴趣的同学投递简历到zhangsiqi04@meituan.com。 
+美团平台诚招 iOS、Android、FE 高级/资深工程师和技术专家，Base 北京、上海、成都，欢迎有兴趣的同学投递简历到zhangsiqi04@meituan.com
