@@ -1,5 +1,5 @@
 ---
-title: precompile for objective-c and swift
+title: 从预编译的角度理解 Swift 与 Objective-C 及混编机制
 comments: true
 date: 2022-08-29 17:00:48
 updated:
@@ -58,7 +58,7 @@ categories:
 
 假设在 `MyApp.m` 文件中，我们 `#import` 了 `iAd.h` 文件，编译器解析此文件后，开始寻找 iAd 包含的内容（`ADInterstitialAd.h`，`ADBannerView.h`），及这些内容包含的子内容（`UIKit.h`，`UIController.h`，`UIView.h`，`UIResponder.h`），并依次递归下去，最后，你会发现 `#import <iAd/iAd.h>` 这段代码变成了对不同 SDK 的头文件依赖。
 
-![01.png](resources/041097B5FA492ADDC3C1F36D644EA600.png)
+![01.png](1.png)
 
 如果你觉得听起来有点费劲，或者似懂非懂，我们这里可以举一个更加详细的例子，不过请记住，对于 C 语言的预处理器而言， `#import` 就是一种特殊的复制粘贴。
 
@@ -163,7 +163,7 @@ categories:
 
 Apple 公司对它们的 Mail App 做过一个分析，下图是 Mail 这个项目里所有 `.m` 文件的排序，横轴是文件编号排序，纵轴是文件大小。
 
-![IMAGE](resources/C4D3D319C9B57437E3BF0620F3C45F15.jpg)
+![IMAGE](2.jpg)
 
 可以看到这些由业务代码构成的文件大小的分布区间很广泛，最小可能有几 kb，最大的能有 200+ kb，但总的来说，可能 90% 的代码都在 50kb 这个数量级之下，甚至更少。
 
@@ -173,11 +173,11 @@ Apple 公司对它们的 Mail App 做过一个分析，下图是 Mail 这个项�
 
 这意味着其他文件也会把 `iAd.h` 里包含的东西纳入进来，当然，好消息是，iAd 这个 SDK 自身只有 25KB 左右的大小。
 
-![IMAGE](resources/362E50676930BA92EE03C01FE253D84F.jpg)
+![IMAGE](3.jpg)
 
 但你得知道 iAd 还会依赖 UIKit 这样的组件，这可是个 400KB+ 的大家伙
 
-![IMAGE](resources/5D6C02B251BE7570CF21C2F9948E309A.jpg)
+![IMAGE](4.jpg)
 
 所以，怎么说呢？
 
@@ -257,11 +257,11 @@ framework module UIKit {
 
 这是因为 Xcode 的编译器能够将符合某种格式的 `#import` 语句自动转换成 module 识别的 `@import` 语句，从而避免了开发者的手动修改。
 
-![画板.png](resources/0DD8842AC1B856E57F2A18312AC6E208.png)
+![画板.png](5.png)
 
 唯一需要开发者完成的就是开启相关的编译选项。
 
-![IMAGE](resources/BDBCEFAD658FA84EE9F11A237BDAFE56.jpg)
+![IMAGE](6.jpg)
 
 对于上面的编译选项，需要开发者注意的是:
 
@@ -306,7 +306,7 @@ framework module UIKit {
 
 想要查看代码预编译后的样子，我们可以在 `Navigate to Related Items` 按钮中找到 `Preprocess` 选项
 
-![IMAGE](resources/40AD2C8BC32C8DFFFA046529876B8A01.jpg)
+![IMAGE](7.jpg)
 
 既然知道了如何查看预编译后的样子，我们不妨看看代码在使用 `#import`, PCH 和 `@import` 后，到底会变成什么样子？
 
@@ -353,25 +353,25 @@ framework module UIKit {
 
 对于 CocoaPods 默认创建的组件，一般都会关闭 PCH 的相关功能，例如笔者创建的 SQPod 组件，它的 `Precompile Prefix Header` 功能默认值为 NO。
 
-![IMAGE](resources/46E48D55332FA6BBE169DAB2BDFC5E17.jpg)
+![IMAGE](8.jpg)
 
 为了查看预编译的效果，我们将 `Precompile Prefix Header` 的值改为 YES，并编译整个项目，通过查看 build log，我们可以发现相比于 NO 的状态，在编译的过程中，增加了一个步骤，即 `Precompile SQPod-Prefix.pch` 的步骤。
 
-![画板.png](resources/F39FE8182474F589D3E8FF601BCC3D33.png)
+![画板.png](9.png)
 
 通过查看这个命令的 `-o` 参数，我们可以知道其产物是名为 `SQPod-Prefix.pch.gch` 的文件
 
-![IMAGE](resources/0527E04BB3C769B970BD7CC9B631B2BF.jpg)
+![IMAGE](10.jpg)
 
 这个文件就是 PCH 预编译后的产物，同时在编译真正的代码时，会通过 `-include` 参数将其引入
 
-![画板.png](resources/A6ED291C38FBD35A43A80B948B5AE49F.png)
+![画板.png](11.png)
 
 ### 又见 clang module
 
 在开启 Define Module 后，系统会为我们自动创建相应的 modulemap 文件，这一点可以在 Build Log 中查找到
 
-![IMAGE](resources/991C618C44B7A5F566E504C88AD559BE.jpg)
+![IMAGE](12.jpg)
 
 它的内容如下：
 
@@ -386,17 +386,17 @@ framework module SQPod {
 
 当然，如果系统自动生成的 modulemap 并不能满足你的诉求，我们也可以使用自己创建的文件，此时只需要在 Build Setting 的 Module Map File 选项中填写好文件路径，相应的 clang 命令参数是 `-fmodule-map-file`。
 
-![画板.png](resources/F9246C40B9218023A41A122909121881.png)
+![画板.png](13.png)
 
 最后让我们看看 module 编译后的产物形态。
 
 这里我们构建一个名为 SQPod 的 module ，将它提供给名为 Example 的工程使用，通过查看 `-fmodule-cache-path` 的参数，我们可以找到 module 的缓存路径
 
-![画板.png](resources/6F1A9DC271280F42B89CF0890289E3A3.png)
+![画板.png](14.png)
 
 进入对应的路径后，我们可以看到如下的文件
 
-![IMAGE](resources/114896D85A6FEF7DDCD50EA4BEA6C1E1.jpg)
+![IMAGE](15.jpg)
 
 其中后缀名为 `pcm` 的文件就是构建出来的二进制中间产物。
 
@@ -412,7 +412,7 @@ framework module SQPod {
 
 header seach path 是构建系统提供给编译器的一个重要参数，它的作用是在编译代码的时候，为编译器提供了查找相应头文件路径的信息，通过查阅 Xcode 的 Build System 信息，我们可以知道相关的设置有三处 header search path，system header search path，user header search path。
 
-![IMAGE](resources/690F59B5A637ED620153FF2F663A9C6E.jpg)
+![IMAGE](16.jpg)
 
 它们的区别也很简单，system header search path 是针对系统头文件的设置，通常代指 `<>` 方式引入的文件，user header search path 则是针对非系统头文件的设置，通常代指 `""` 方式引入的文件，而 header search path 并不会有任何限制，它普适于任何方式的头文件引用。
 
@@ -431,7 +431,7 @@ header seach path 是构建系统提供给编译器的一个重要参数，它�
 
 * 引入的内容形式：对于 `X/X.h` 和 `X.h` 这两种引入的内容形式，前者是说在对应的 search path 中，找到目录 A 并在 A 目录下查找 `A.h`，而后者是说在 search path 下查找 `A.h` 文件，而不一定局限在 A 目录中，至于是否递归的寻找则取决于对目录的选项是否开启了 `recursive` 模式
 
-![画板.png](resources/2A13563E31339C807293180D0E673CF3.png)
+![画板.png](17.png)
 
 在很多工程中，尤其是基于 CocoaPods 开发的项目，我们已经不会区分 system header search path 和 user header search path，而是一股脑的将所有头文件路径添加到 header search path 中，这就导致我们在引用某个头文件时，不会再局限于前面提到的约定，甚至在某些情况下，前面提到的四种方式都可以做到引入某个指定头文件。
 
@@ -441,7 +441,7 @@ header seach path 是构建系统提供给编译器的一个重要参数，它�
 
 为了理解这个东西，我们首先要在 build setting 中开启 Use Header Map 选项。
 
-![IMAGE](resources/E3FAC0C08ED5A9FAD635502D2EA4EF37.jpg)
+![IMAGE](18.jpg)
 
 然后在 build log 里获取相应组件里对应文件的编译命令，并在最后加上 `-v` 参数，来查看其运行的秘密：
 
@@ -451,7 +451,7 @@ clang <list of arguments> -c SQViewController.m -o SQViewcontroller.o -v
 
 在 console 的输出内容中，我们会发现一段有意思的内容：
 
-![画板.png](resources/4DB82D136434E3EC04E061155343B42E.png)
+![画板.png](19.png)
 
 通过上面的图，我们可以看到编译器将寻找头文件的顺序和对应路径展示出来了，而在这些路径中，我们看到了一些陌生的东西，即后缀名为 `.hmap` 的文件。
 
@@ -463,11 +463,11 @@ clang <list of arguments> -c SQViewController.m -o SQViewcontroller.o -v
 
 在执行相关命令（即 `hmap print`）后，我们可以发现这些 hmap 里保存的信息结构大致如下：
 
-![IMAGE](resources/CBF6C3DBAC24F428F9632EBF3F4116FF.jpg)
+![IMAGE](20.jpg)
 
 需要注意，映射表的键值并不是简单的文件名和绝对路径，它的内容会随着使用场景产生不同的变化，例如头文件引用是在 `"..."` 的形式，还是 `<...>` 的形式，又或是在 Build Phase 里 Header 的配置情况。
 
-![IMAGE](resources/02F33C5C74D8A9532AC6F624B0C6AFE2.jpg)
+![IMAGE](21.jpg)
 
 至此我想你应该明白了，一旦开启 Use Header Map 选项后，Xcode 会优先去 hmap 映射表里寻找头文件的路径，只有在找不到的情况下，才会去 header search path 中提供的路径遍历搜索。
 
@@ -524,7 +524,7 @@ $SDKROOT/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
 
 那这是全部头文件的搜索机制么？答案是否定的，其实我们还有一种头文件搜索机制，它是基于 Framework 这种文件结构进行的。
 
-![IMAGE](resources/A2952A1A977B79C639002831BB2372F0.jpg)
+![IMAGE](22.jpg)
 
 对于开发者自己的 Framework，可能会存在 "private" 头文件，例如在 podspec 里用 `private_header_files` 的描述文件，这些文件在构建的时候，会被放在 Framework 文件结构中的 PrivateHeaders 目录。
 
@@ -536,7 +536,7 @@ $SDKROOT/System/Library/Frameworks/Foundation.framework/PrivateHeaders/SecretCla
 
 不过也正是因为这个工作机制，会产生一个特别有意思的问题，那就是当我们使用 Framework 的方式引入某个带有 "private" 头文件的组件时，我们总是可以以下面的方式引入这个头文件！
 
-![画板.png](resources/6F547577D1A672B645454BE590C4CC02.png)
+![画板.png](23.png)
 
 怎么样，是不是很神奇，这个被描述为 "private" 的头文件怎么就不私有了？
 
@@ -566,7 +566,7 @@ $SDKROOT/System/Library/Frameworks/Foundation.framework/PrivateHeaders/SecretCla
 
 这里我们仔细阅读一下[官方文档的解释](https://guides.cocoapods.org/syntax/podspec.html)，尤其是 `private_header_files` 字段。
 
-![IMAGE](resources/EDFBA7BEDD88E4CD44BE21E71AE97F69.jpg)
+![IMAGE](24.jpg)
 
 我们可以看到，`private_header_files` 在这里的含义是说，它本身是相对于 public 而言的，这些头文件本义是不希望暴露给用户使用的，而且也不会产生相关文档，但是在构建的时候，会出现在最终产物中，只有既没有被 public 和 private 标注的头文件，才会被认为是真正的私有头文件，且不出现在最终的产物里。
 
@@ -611,11 +611,11 @@ $(SDKROOT)/System/Library/Frameworks(framework directory)
 
 整个结构看起来如下所示。
 
-![画板.png](resources/DC2CD13AFE2DE3764C39DC54D592E79D.png)
+![画板.png](25.png)
 
 此时我们将 PodA 里的文件全部放在 Header 的 Project 类型中。
 
-![IMAGE](resources/3ADDECCF3A0DEDF5CFBE6316E30A74F7.jpg)
+![IMAGE](26.jpg)
 
 在基于 Framework 的搜索机制下，我们是无法以任何方式引入到 ClassB 的，因为它既不在 Headers 目录，也不在 PrivateHeader 目录中。
 
@@ -644,7 +644,7 @@ $(SDKROOT)/System/Library/Frameworks(framework directory)
 
 接着上面的话题来说，所以说在 Static Library 的情况下且以 `#import <A/A.h>` 这种标准方式引入头文件时，开启 Use Header Map 并不会提升编译速度，而这同样是 Xcode 和 CocoaPods 在工程和头文件上的理念冲突造成的。
 
-![画板.png](resources/603725B73737B448BE7A1E0A42924FC5.png)
+![画板.png](27.png)
 
 这样来看的话，虽然 hmap 有种种优势，但是在 CocoaPods 的世界里显得格格不入，也无法发挥自身的优势。
 
@@ -676,7 +676,7 @@ $(SDKROOT)/System/Library/Frameworks(framework directory)
 
 首先会去 Framework 的 Headers 目录下寻找相应的头文件是否存在，然后就会到 Modules 目录下查找 modulemap 文件
 
-![画板.png](resources/824976159992ECE19BAF519C789F8EE4.png)
+![画板.png](28.png)
 
 此时，Clang 会去查阅 modulemap 里的内容，看看 NSString 是否为 Foundation 这个 Module 里的一部分，
 
@@ -719,11 +719,11 @@ framework module Foundation [extern_c] [system] {
 
 当我们在构建 Foundation 的时候，我们会发现 Foundation 自身要依赖一些组件，这意味着我们也需要构建被依赖组件的 module
 
-![画板.png](resources/11107DE8E7C47B6AB4A932B6E3325E03.png)
+![画板.png](29.png)
 
 但很明显的是，我们会发现这些被依赖组件也有自己的依赖关系，在它们的这些依赖关系中，极有可能会存在重复的引用。
 
-![画板.png](resources/A05E95752EA69CA27A1EC2DC29E8053C.png)
+![画板.png](30.png)
 
 此时 module 的复用机制就体现出来优势了，我们可以复用先前构建出来的 module，而不必一次次的创建或者引用，例如 Drawin 组件，而保存这些缓存文件的位置就是前面章节里提到的保存 `pcm` 类型文件的地方。
 
@@ -753,7 +753,7 @@ $ clang -fmodules —DENABLE_FEATURE=2 …
 
 对于系统组件，我们可以在 `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.2.sdk/System/Library/Frameworks` 目录里找到它的身影，它的目录结构大概是这样的
 
-![IMAGE](resources/392CF00D4A8F94668964B615ED3FE7C9.jpg)
+![IMAGE](31.jpg)
 
 也就是说，对于系统组件而言，构建 module 的整个过程是建立在这样一个完备的文件结构上，即在 Framework 的 Modules 目录中查找 modulemap，在 Headers 目录中加载头文件。
 
@@ -761,7 +761,7 @@ $ clang -fmodules —DENABLE_FEATURE=2 …
 
 通常我们的开发目录大概是下面的样子，它并没有 modules 目录，也没有 headers 目录，更没有 modulemap 文件，看起来和 framework 的文件结构也有着极大的区别。
 
-![IMAGE](resources/F9C1D08434BB943B21C5F874FC998155.jpg)
+![IMAGE](32.jpg)
 
 在这种情况下，clang 是没法按照前面所说的机制去构建 module 的，因为在这种文件结构中，压根就没有 Modules 和 Headers 目录。
 
@@ -771,7 +771,7 @@ $ clang -fmodules —DENABLE_FEATURE=2 …
 
 为了进一步了解 VFS，我们还是从 Build Log 中查找一些细节！
 
-![画板.png](resources/0F2FA85BADD0445D10FB9A72580D4D38.png)
+![画板.png](33.png)
 
 在上面的编译参数里，我们可以找到一个 `-ivfsoverlay` 的参数，查看 help 说明，可以知道其作用就是向编译器传递一个 VFS 描述文件并覆盖掉真实的文件结构信息。
 
@@ -824,7 +824,7 @@ $ clang -fmodules —DENABLE_FEATURE=2 …
 
 前面的章节我们聊了很多 C 语言系的预编译知识，在这个体系下，文件的编译是分开的，当我们想引用其他文件里的内容时，就必须引入相应的头文件。
 
-![画板.png](resources/4755A36625A5446B4272E9F6C4FD8F5A.png)
+![画板.png](34.png)
 
 而对于 Swift 这门语言来说，它并没有头文件的概念，对于开发者而言，这确实省去了写头文件的重复工作，但这也意味着，编译器会进行额外的操作来查找接口定义并需要持续关注接口的变化！
 
@@ -857,7 +857,7 @@ class TestPetViewController: XCTestCase {
 
 它们的关系大致如下所示：
 
-![画板.png](resources/BDB10D38968BE4EB18F9358B7294D994.png)
+![画板.png](35.png)
 
 为了能让这些代码编译成功，编译器会面对如下 4 个场景：
 
@@ -871,7 +871,7 @@ class TestPetViewController: XCTestCase {
 
 此时编译器会加载 `PetView.swift` 文件并解析其中的内容, 这么做的目的就是确保初始化构造器真的存在，并拿到相关的类型信息，以便 `PetViewController.swift` 进行验证。
 
-![画板.png](resources/25CB968BA2692342244E4579E35AE049.png)
+![画板.png](36.png)
 
 编译器并不会对初始化构造器的内部做检查，但它仍然会进行一些额外的操作，这是什么意思呢？
 
@@ -879,13 +879,13 @@ class TestPetViewController: XCTestCase {
 
 同时我们也知道，每个文件的编译是独立的，且不同文件的编译是可以并行开展的，所以这就意味着每编译一个文件，就需要将当前 target 里的其余文件当做接口，重新编译一次。 等于任意一个文件，在整个编译过程中，只有 1 次被作为生产 `.o` 产物的输入，其余时间会被作为接口文件反复解析。
 
-![画板.png](resources/B20BCCCC38D4B77A9B6FED312EC6625C.png)
+![画板.png](37.png)
 
 不过在 Xcode 10 以后，Apple 对这种编译流程进行了优化！
 
 在尽可能保证并行的同时，将文件进行了分组编译，这样就避免了 group 内的文件重复解析，只有不同 group 之间的文件会有重复解析文件的情况。
 
-![画板.png](resources/5476D0FC662519BF2CE14A4A677E3099.png)
+![画板.png](38.png)
 
 而这个分组操作的逻辑，就是刚才提到的一些额外操作。
 
@@ -903,7 +903,7 @@ class TestPetViewController: XCTestCase {
 
 很简单，Swift 编译器将 clang 的大部分功能包含在其自身的代码中，这就使得我们能够以 module 的形式，直接引用 Objective-C 的代码。
 
-![画板.png](resources/EAACB0F48B4AB2C6DAE649064F4E2934.png)
+![画板.png](39.png)
 
 既然是通过 module 的形式引入 Objective-C，那么 framework 的文件结构则是最好的选择，此时编译器寻找方法声明的方式就会有下面三种场景：
 
@@ -915,7 +915,7 @@ class TestPetViewController: XCTestCase {
 
 不过我们应该知道 Swift 编译器在获取 Objective-C 代码过程中，并不是原原本本的将 Objective—C 的 API 暴露给 Swift，而是会做一些 “Swift 化” 的改动，例如下面的 Objective-C API 就会被转换成更简约的形式。
 
-![画板.png](resources/9AB1A337A5987628571F7B7C47C3BA74.png)
+![画板.png](40.png)
 
 这个转换过程并不是什么高深的技术，它只是在编译器上的硬编码，如果感兴趣，可以在 Swift 的开源库中的找到相应的代码 - [PartsOfSpeech.def](https://github.com/apple/swift/blob/main/lib/Basic/PartsOfSpeech.def)
 
@@ -923,7 +923,7 @@ class TestPetViewController: XCTestCase {
 
 不过这里还是要提一句，如果你对生成的接口有困惑，可以通过下面的方式查看编译器为 Objective-C 生成的 Swift 接口。
 
-![IMAGE](resources/0EBFCAD6D1ACD73B381207EA5343A5B5.jpg)
+![IMAGE](41.jpg)
 
 ### 第三步 - Target 内的 Swift 代码是如何为 Objective-C 提供接口的
 
@@ -931,7 +931,7 @@ class TestPetViewController: XCTestCase {
 
 从使用层面来说，我们都知道 Swift 编译器会帮我们自动生成一个头文件，以便 Objective-C 引入相应的代码，就像第二段代码里引入的 `PetWall-Swift.h` 文件，这种头文件通常是编译器自动生成的，名字的构成是 `组件名-Swift` 的形式。
 
-![画板.png](resources/44CA84CD27E771A216E9BC31C1548C26.png)
+![画板.png](42.png)
 
 但它到底是怎么产生的呢？
 
@@ -945,7 +945,7 @@ class TestPetViewController: XCTestCase {
 
 那么编译器自动生成的 API 到底是什么样子，有什么特点呢？
 
-![画板.png](resources/0E0D6D9F92D82A565C9620E6CD997B5F.png)
+![画板.png](43.png)
 
 上面是截取了一段自动生成的头文件代码，左侧是原始的 Swift 代码，右侧是自动生成的 Objective-C 代码，我们可以看到在 Objective-C 的类中，有一个名为 `SWIFT_CLASS` 的宏，将 Swift 与 Objective-C 中的两个类进行了关联。
 
@@ -953,7 +953,7 @@ class TestPetViewController: XCTestCase {
 
 当然，你也可以通过向 `@objc(Name)` 关键字传递一个标识符，借由这个标识符来控制其在 Objective-C 中的名称，如果这样做的话，需要开发者确保转换后的类名不与其他类名出现冲突。
 
-![画板.png](resources/FD35C7F09E1E8D111188B976D122227A.png)
+![画板.png](44.png)
 
 这大体上就是 Swift 如何像 Objective-C 暴露接口的机理了，如果你想更深入的了解这个文件的由来，就需要看看第四步。
 
@@ -980,17 +980,17 @@ class TestPetViewController: XCTestCase {
 
 例如，以下图为例，在这个单元测试中，编译器会加载 PetWall 的 module，并在其中找寻 PetViewController 的方法声明，由此确保其创建行为是符合预期的。
 
-![画板.png](resources/D0850B02374330F95CD69B56A4E3697B.png)
+![画板.png](45.png)
 
 这看起来很像第一步中 target 寻找内部 Swift 方法声明的样子，只不过这里将解析 swift 文件的步骤，换成了解析 swiftmodule 文件而已。
 
 不过需要注意的是，这个 swfitmodule 文件并不是文本文件，它是一个二进制格式的内容，通常我们可以在构建产物的 Modules 文件夹里寻找到它的身影。
 
-![IMAGE](resources/8D4354D2D9A3F94BDBFCA28E67916392.jpg)
+![IMAGE](46.jpg)
 
 在 target 的编译的过程中，面向整个 target 的 swiftmodule 文件并不是一下产生的，每一个 swift 文件都会生成一个 swiftmodule 文件，编译器会将这些文件进行汇总，最后再生成一个完整的，代表整个 target 的 swiftmodule，也正是基于这个文件，编译器构造出了用于给外部使用的 Objective-C 头文件，也就是第三步里提到的头文件
 
-![画板.png](resources/38B6653A5A97EF7ABFD3F64948B2ED8F.png)
+![画板.png](47.png)
 
 不过随着 Swift 的发展，这一部分的工作机制也发生了些许变化。
 
@@ -1000,7 +1000,7 @@ class TestPetViewController: XCTestCase {
 
 为了解决这种对编译器的版本依赖，Xcode 在构建产物上提供了一个新的产物，swiftinterface 文件。
 
-![IMAGE](resources/A9E2BB352A7A01D65DD93205CA312029.jpg)
+![IMAGE](48.jpg)
 
 这个文件里的内容和 swiftmodule 很相似，都是当前 module 里的 API 信息，不过 swiftinterface 是以文本的方式记录，而非 swiftmodule 的二进制方式。
 
@@ -1008,7 +1008,7 @@ class TestPetViewController: XCTestCase {
 
 为了更进一步了解它，我们来看看 swiftinterface 的真实样子，下面是一个 `.swift` 文件和 `.swiftinterface` 文件的比对图。
 
-![画板.png](resources/343A790F42315A2D3A7171520877DFC0.png)
+![画板.png](49.png)
 
 在 swiftinterface 文件中，有以下点需要注意
 
@@ -1031,17 +1031,17 @@ clang module 是面向 C 语言家族的一种技术，通过 modulemap 文件�
 
 swift module 是面向 Swift 语言的一种技术，通过 swiftinterface 文件来组织 `.swift` 文件中的接口信息，中间产物二进制格式的 swiftmodule 文件。
 
-![画板.png](resources/A3BC1D091817614BD46AE34AA3A78182.png)
+![画板.png](50.png)
 
 所以说理清楚这些概念和关系后，我们在构建 Swift 组件的产物时，就会知道哪些文件和参数不是必须的了。
 
 例如当你的 Swift 组件不想暴露自身的 API 给外部的 Objective-C 代码使用的话，可以将 Build Setting 中 Swift Compiler - General 里的 Install Objective-C Compatiblity Header 参数设置为 NO，其编译参数为 `SWIFT_INSTALL_OBJC_HEADER`，此时不会生成 `<ProductModuleName>-Swift.h` 类型的文件，也就意味着外部组件无法以 Objective-C 的方式引用组件内 Swift 代码的 API。
 
-![IMAGE](resources/45FD13DB8B2EFE2863587381A0F5D5AD.jpg)
+![IMAGE](51.jpg)
 
 而当你的组件里如果压根就没有 Objective-C 代码的时候，你可以将 Build Setting 中 Packaging 里 Defines Module 参数设置为 NO，其编译参数为 `DEFINES_MODULE`, 此时不会生成 `<ProductModuleName>.modulemap` 类型的文件。
 
-![IMAGE](resources/D7A37ACF2219329E8EBF4BF2A54FE55D.jpg)
+![IMAGE](52.jpg)
 
 #### Swift 和 Objective-C 混编的三个“套路”
 
@@ -1049,15 +1049,15 @@ swift module 是面向 Swift 语言的一种技术，通过 swiftinterface 文�
 
 当 Swift 和 Objective-C 文件同时在一个 App 或者 Unit Test 类型的 target 中，不同类型文件的 API 寻找机制如下
 
-![画板.png](resources/1D29276863340057BB510267F273FE63.png)
+![画板.png](53.png)
 
 当 Swift 和 Objective-C 文件在不同 target 中，例如不同 Framework 中，不同类型文件的 API 寻找机制如下
 
-![画板.png](resources/7CFB5425A5436805C3E820DB790093B3.png)
+![画板.png](54.png)
 
 当 Swift 和 Objective-C 文件同时在一个target 中，例如同一 Framework 中，不同类型文件的 API 寻找机制如下
 
-![画板.png](resources/A13DFB261F5483608FC7944F944A4EA1.png)
+![画板.png](55.png)
 
 对于第三个流程图，需要做以下补充说明
 
@@ -1071,7 +1071,7 @@ swift module 是面向 Swift 语言的一种技术，通过 swiftinterface 文�
 
 目前来看，这个在 Xcode 中是无法直接实现的，原因很简单，Build Setting 中 Search Path 选项里并没有 modulemap 的 search path 配置参数。
 
-![IMAGE](resources/21CB0356E93587B5547318EBEC0EE87F.jpg)
+![IMAGE](56.jpg)
 
 为什么一定需要 modulemap 的 search path 呢？
 
@@ -1139,7 +1139,7 @@ swiftc -c LaunchPoint.swift -emit-module -emit-module-path build/LaunchPoint.swi
 
 例如，对于 PodA 组件而言，它自身依赖 PodB 组件，在使用原先的构建方式时，我们需要拉取 PodB 组件的完整 Framework 产物，这会包含 Headers 目录，Modules 目录里的必要内容，当然还会包含一个二进制文件（PodB），但在实际编译 PodA 组件的过程中，我们并不需要 B 组件里的二进制文件，而这让拉取完整的 Framework 文件显得多余了。
 
-![IMAGE](resources/2BE2D723650EEFBA6D1AA1B56E605AA0.jpg)
+![IMAGE](57.jpg)
 
 而借助 VFS 技术，我们就能避免拉取多余的二进制文件，进一步提升 CI 系统的编译效率。
 
